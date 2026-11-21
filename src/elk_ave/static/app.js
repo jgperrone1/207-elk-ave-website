@@ -312,6 +312,10 @@
       if (statExam) statExam.textContent = `${floor.exam_and_clinical_rooms}+`;
       if (statProc) statProc.textContent = String(floor.procedure_rooms);
       if (statRest) statRest.textContent = String(floor.restrooms);
+      const statRestLbl = document.getElementById("floor-stat-rest-lbl");
+      if (statRestLbl) {
+        statRestLbl.textContent = floor.level === 1 ? "Ground-Floor Restrooms" : "Upper-Floor Restrooms";
+      }
       if (statDoors) statDoors.textContent = String(floor.exterior_egress_doors);
 
       if (zonesContainer) {

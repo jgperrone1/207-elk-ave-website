@@ -1,6 +1,6 @@
-# 201–207 Elk Ave S Medical & Executive Leasing Website (`201-elk-ave-website`)
+# 207 Elk Ave S Medical & Executive Leasing Website (`207-elk-ave-website`)
 
-This project builds and serves a local-first, static-compatible marketing and due-diligence web application for **207 Elk Ave S (201–207 Elk Ave S Medical Campus)** in historic downtown Fayetteville, TN. It serves prospective medical, dental, specialty outpatient, behavioral health, rehabilitation, and healthcare education tenants evaluating single-floor, phased, or full-building lease structures with ownership (**207 Elk LLC**). The primary technology stack is a zero-dependency Python 3.9+ static site builder and local HTTP server (`src/elk_ave/`) paired with semantic HTML5, modern CSS3 custom properties, and progressive vanilla JavaScript (`ES2022`).
+This project builds and serves a local-first, static-compatible marketing and due-diligence web application for **207 Elk Ave S** in historic downtown Fayetteville, TN. It serves prospective medical, dental, specialty outpatient, behavioral health, rehabilitation, and healthcare tenants evaluating single-floor, phased, or full-building lease structures with ownership (**207 Elk LLC**). The primary technology stack is a zero-dependency Python 3.9+ static site builder and local HTTP server (`src/elk_ave/`) paired with semantic HTML5, modern CSS3 custom properties, and progressive vanilla JavaScript (`ES2022`).
 
 ---
 

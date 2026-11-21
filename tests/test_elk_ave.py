@@ -85,14 +85,24 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         # Disclosures verification
         self.assertIn('id="disclosures"', html_output)
         self.assertIn("nav-disclosure-link", html_output)
-        self.assertIn("Real Estate Licensing &amp; Ownership Disclosure", html_output)
-        self.assertIn("Renderings &amp; Information Disclaimer", html_output)
-        self.assertIn("62-13-104", html_output)
-        self.assertIn("RealtyMark Solutions, LLC", html_output)
-        self.assertIn("Shazia (Shaz) Perrone", html_output)
+        self.assertIn("Owner-Principal &amp; License Disclosure", html_output)
+        self.assertIn("SL3651002", html_output)
+        self.assertIn("207 ELK LLC", html_output)
+        self.assertNotIn("RealtyMark Solutions", html_output)
+        self.assertIn("Conceptual Renderings Disclaimer", html_output)
+        self.assertIn("Approximate Measurements &amp; Errors/Omissions", html_output)
+        self.assertIn("As-Is Clinical Infrastructure &amp; Tenant Compliance", html_output)
+        self.assertIn("No Affiliation with Former Tenant", html_output)
+        self.assertIn("~20,256 GSF", html_output)
 
         # Scrubbed tokens verification
         scrubbed_phrases = (
+            "17,300",
+            "8 ADA Restrooms",
+            "$0 Trenching",
+            "Turnkey Outpatient Facility",
+            "Immediate Clinical Readiness",
+            "health sciences training cohorts",
             "Code, Permitting & Capital Efficiency",
             "CODE & CAPITAL",
             "Group B",
@@ -107,6 +117,11 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
                 html_output,
                 f"Found forbidden scrubbed phrase '{phrase}' in rendered HTML.",
             )
+
+        # Audit content verification
+        self.assertIn("Clinical Infrastructure Readiness Without Cold-Shell Capital Outlay", html_output)
+        self.assertIn("Coming Soon!  Turnkey Clinical Office Space for Lease in Downtown Fayetteville, TN", html_output)
+        self.assertIn("Minimal Trenching", html_output)
 
         # Gallery verification
         self.assertIn("Specialty Procedure &amp; Dermatology Suite (Renovation Concept)", html_output)
@@ -267,7 +282,8 @@ class RendererAndServerTests(unittest.TestCase):
         listing = build_property_listing()
         html_output = render_index_html(listing)
         self.assertIn('<nav class="header-nav" aria-label="Primary Navigation">', html_output)
-        self.assertIn('>Schedule Tour</a>', html_output)
+        self.assertNotIn('>Schedule Tour</a>', html_output)
+        self.assertIn('>Contact For Info</a>', html_output)
 
         css_path = Path(__file__).resolve().parent.parent / "src" / "elk_ave" / "static" / "styles.css"
         css_text = css_path.read_text(encoding="utf-8")

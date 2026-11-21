@@ -126,10 +126,10 @@ def calculate_clinical_fit(request: SpaceEstimateRequest) -> SpaceEstimateResult
         months_saved = 11
     else:
         level_code = "full-campus"
-        floor_plan = "Full Two-Story Medical Campus (35+ Plumbed Rooms, 7 Procedure Suites, Labs & Executive Wing)"
+        floor_plan = "Full Two-Story Medical Campus (~20,256 GSF, 35+ Plumbed Rooms, 7 Procedure Suites, Labs & Executive Wing)"
         allocated_rooms = 35
         proc_rooms = 8
-        usable_sqft = 17300
+        usable_sqft = 20256
         months_saved = 14
 
     # Cold dark shell medical build-out in 2026 averages ~$215/SF due to wet-wall trenching,
@@ -139,7 +139,7 @@ def calculate_clinical_fit(request: SpaceEstimateRequest) -> SpaceEstimateResult
         cold_shell_per_sqft = 240
 
     # Existing turnkey infrastructure at 207 Elk Ave S preserves plumbing wet walls,
-    # partitions, 12 ADA restrooms, elevator, and electrical panels.
+    # partitions, 12 restrooms (with ADA-accessible facilities), elevator, and electrical panels.
     tier_cost_per_sqft = {
         "turnkey-refresh": 28,
         "modern-clinical": 52,
@@ -150,23 +150,23 @@ def calculate_clinical_fit(request: SpaceEstimateRequest) -> SpaceEstimateResult
     turnkey_ti_cost = usable_sqft * tier_cost_per_sqft
     capital_saved = max(0, cold_shell_cost - turnkey_ti_cost)
 
-    # Dedicated 0.5-acre lot across Elk Ave S + on-site apron supports ~75+ spaces
+    # Dedicated ~0.5-acre lot across Elk Ave S + on-site apron supports ~75+ spaces
     parking_spaces = 75
 
     advantages = [
-        f"Avoids concrete slab trenching across {allocated_rooms} wet-wall plumbed clinical rooms.",
-        "Turnkey clinical infrastructure with complete wet-wall plumbing, eliminating extensive structural retrofits.",
+        f"Minimizes concrete slab trenching across {allocated_rooms} wet-wall plumbed clinical rooms.",
+        "Clinical infrastructure readiness with complete wet-wall plumbing, eliminating extensive structural retrofits.",
     ]
     if request.needs_xray_or_lab:
         advantages.append(
-            "Includes existing X-Ray suite, Reading Room, Phlebotomy Blood Draw, and built-in Laboratory cabinetry."
+            "Includes dedicated diagnostic rooms: X-Ray suite, Reading Room, Phlebotomy Blood Draw, and built-in Laboratory cabinetry."
         )
     if request.needs_conference_hall or level_code in ("level-2", "full-campus"):
         advantages.append(
-            "Includes 576 SF clear-span Conference/Didactic Hall (#222) and 2nd-floor Executive Lounge."
+            "Includes 576 SF clear-span Conference/Collaboration Hall (#222) and 2nd-floor Executive Lounge."
         )
     advantages.append(
-        f"Accommodates {request.daily_patients} daily patient visits with dual waiting rooms and 0.5-acre dedicated parking."
+        f"Accommodates {request.daily_patients} daily patient visits with dual waiting rooms and ~0.5-acre dedicated parking."
     )
 
     return SpaceEstimateResult(

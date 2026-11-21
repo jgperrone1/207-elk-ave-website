@@ -53,7 +53,7 @@ def build_json_ld(listing: PropertyListing) -> dict[str, Any]:
             {"@type": "PropertyValue", "name": "Plumbed Clinical & Exam Rooms", "value": "35+"},
             {"@type": "PropertyValue", "name": "Dedicated Procedure Suites", "value": "7"},
             {"@type": "PropertyValue", "name": "Restrooms", "value": "12"},
-            {"@type": "PropertyValue", "name": "Dedicated Parking Lot Acres", "value": str(listing.parking_lot_acres)},
+            {"@type": "PropertyValue", "name": "Dedicated Parking Lot Acres", "value": "~0.5"},
         ],
         "seller": {
             "@type": "Person",
@@ -195,9 +195,9 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{_esc(listing.street_address)} ({_esc(listing.campus_alias)}) | Turnkey Medical &amp; Executive Space for Lease — Fayetteville, TN</title>
+  <title>{_esc(listing.street_address)} | Turnkey Clinical &amp; Executive Space for Lease — Fayetteville, TN</title>
   <meta name="description" content="{_esc(listing.subheadline)}" />
-  <meta property="og:title" content="{_esc(listing.street_address)} — Turnkey Medical &amp; Executive Campus for Lease" />
+  <meta property="og:title" content="{_esc(listing.street_address)} — Turnkey Clinical &amp; Executive Space for Lease" />
   <meta property="og:description" content="{_esc(listing.subheadline)}" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{_esc(_asset('assets/images/exterior_wellness_no_cafe.png'))}" />
@@ -233,7 +233,6 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 
       <div class="header-actions">
         <button type="button" id="theme-toggle-btn" class="icon-btn" aria-label="Toggle color theme">🌙</button>
-        <a href="#contact" class="btn btn--primary btn--sm">Schedule Tour</a>
       </div>
     </div>
   </header>
@@ -241,61 +240,59 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
   <main id="main-content">
     <!-- Hero Section -->
     <section id="top" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="hero-badges">
-            <span class="badge badge--dot">Available for Lease · Single-Floor or Full-Campus</span>
-            <span class="badge">Turnkey Outpatient Facility</span>
-            <span class="badge">Huntsville North Growth Corridor</span>
-          </div>
-
-          <h1 class="hero-title">
-            Turnkey Clinical Scale at <span>207 Elk Ave S</span>.
+      <div class="container">
+        <div class="hero-header-full">
+          <h1 class="hero-title hero-title--full">
+            Coming Soon!  Turnkey Clinical Office Space for Lease in Downtown Fayetteville, TN
           </h1>
-
-          <p class="hero-lead">
-            {_esc(listing.subheadline)} Formerly home to <strong>HH Lincoln Health Primary Care</strong>
-            at the 201–207 Elk Ave S corner campus, one block off Fayetteville’s historic Town Square.
-          </p>
-
-          <div class="hero-cta-row">
-            <a href="#floorplans" class="btn btn--primary">Explore Interactive Floorplans</a>
-            <a href="#contact" class="btn btn--secondary">Schedule Tour &amp; Inquire</a>
-          </div>
-
-          <div class="hero-quick-facts">
-            <div>
-              <div class="quick-fact-val">35+ Rooms</div>
-              <div class="quick-fact-lbl">Sink-equipped exam &amp; clinical suites across 2 levels</div>
-            </div>
-            <div>
-              <div class="quick-fact-val">0.5 Acre</div>
-              <div class="quick-fact-lbl">Dedicated private parking lot directly across Elk Ave S</div>
-            </div>
-            <div>
-              <div class="quick-fact-val">$0 Trenching</div>
-              <div class="quick-fact-lbl">Intact wet walls, subfloor access, X-ray &amp; lab rooms</div>
-            </div>
-          </div>
         </div>
 
-        <div class="hero-showcase">
-          <div class="hero-image-frame">
-            <img
-              id="hero-main-image"
-              src="{_esc(_asset('assets/images/exterior_wellness_no_cafe.png'))}"
-              alt="207 Elk Ave S Renovated Medical &amp; Executive Exterior Concept"
-            />
-          </div>
-          <div class="hero-view-switcher">
-            <div class="hero-view-caption">
-              <strong id="hero-view-label">Renovated Architectural Concept</strong>
-              <span id="hero-view-sub">Modernized brick &amp; dark architectural bronze facade along Elk Ave S</span>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-lead">
+              {_esc(listing.subheadline)} Formerly home to <strong>HH Lincoln Health Primary Care</strong>
+              at 207 Elk Ave S, one block off Fayetteville’s historic Town Square.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="#floorplans" class="btn btn--primary">Explore Interactive Floorplans</a>
+              <a href="#contact" class="btn btn--secondary">Contact For Info</a>
             </div>
-            <div class="segmented-control" role="group" aria-label="Exterior View Selector">
-              <button type="button" class="segmented-btn active" data-hero-view="renovated">Renovated</button>
-              <button type="button" class="segmented-btn" data-hero-view="original">Current</button>
-              <button type="button" class="segmented-btn" data-hero-view="aerial">Aerial</button>
+
+            <div class="hero-quick-facts">
+              <div>
+                <div class="quick-fact-val">35+ Rooms</div>
+                <div class="quick-fact-lbl">Sink-equipped exam &amp; clinical suites across 2 levels</div>
+              </div>
+              <div>
+                <div class="quick-fact-val">~0.5 Acre</div>
+                <div class="quick-fact-lbl">Dedicated private parking lot directly across Elk Ave S</div>
+              </div>
+              <div>
+                <div class="quick-fact-val">Minimal Trenching</div>
+                <div class="quick-fact-lbl">Intact wet walls, direct subfloor/basement utility access, X-ray &amp; lab rooms</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-showcase">
+            <div class="hero-image-frame">
+              <img
+                id="hero-main-image"
+                src="{_esc(_asset('assets/images/exterior_wellness_no_cafe.png'))}"
+                alt="207 Elk Ave S Renovated Medical &amp; Executive Exterior Concept"
+              />
+            </div>
+            <div class="hero-view-switcher">
+              <div class="hero-view-caption">
+                <strong id="hero-view-label">Renovated Architectural Concept</strong>
+                <span id="hero-view-sub">Modernized brick &amp; dark architectural bronze facade along Elk Ave S</span>
+              </div>
+              <div class="segmented-control" role="group" aria-label="Exterior View Selector">
+                <button type="button" class="segmented-btn active" data-hero-view="renovated">Renovated</button>
+                <button type="button" class="segmented-btn" data-hero-view="original">Current</button>
+                <button type="button" class="segmented-btn" data-hero-view="aerial">Aerial</button>
+              </div>
             </div>
           </div>
         </div>
@@ -306,8 +303,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="overview" class="section section--alt">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Executive Briefing · 201–207 Elk Ave S Campus</span>
-          <h2 class="section-title">Immediate Clinical Readiness Without Cold-Shell Capital Outlay</h2>
+          <span class="eyebrow">Executive Briefing · 207 Elk Ave S</span>
+          <h2 class="section-title">Clinical Infrastructure Readiness Without Cold-Shell Capital Outlay</h2>
           <p class="section-subtitle">
             {_esc(listing.executive_summary[0])} {_esc(listing.executive_summary[1])}
           </p>
@@ -443,7 +440,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             <span class="eyebrow">Architectural Schematics &amp; Suite Breakdown</span>
             <h2 class="section-title" style="margin-bottom: 0.25rem;">Interactive Dual-Level Floorplan Explorer</h2>
             <p class="section-subtitle">
-              Lease the Ground Floor, the Upper Level, or combine both elevator-connected levels into a custom medical campus.
+              Lease the Ground Floor (~12,874 SF), the Upper Level (~7,382 SF), or combine both elevator-connected levels (~20,256 GSF) into a custom medical campus.
             </p>
           </div>
           <div class="floor-tabs" role="tablist" aria-label="Building Floor Selector">
@@ -482,7 +479,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
               </div>
               <div>
                 <div class="floor-stat-num" id="floor-stat-rest">{first_floor.restrooms}</div>
-                <div class="floor-stat-lbl">ADA Restrooms</div>
+                <div class="floor-stat-lbl" id="floor-stat-rest-lbl">Ground-Floor Restrooms</div>
+                <div class="floor-stat-sub" style="font-size:0.75rem; color:var(--text-muted);">ADA-Accessible Restroom Facilities</div>
               </div>
               <div>
                 <div class="floor-stat-num" id="floor-stat-doors">{first_floor.exterior_egress_doors}</div>
@@ -516,11 +514,11 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
       </div>
     </section>
 
-    <!-- Location, Dedicated 0.5-Acre Parking & Certified Surveys -->
+    <!-- Location, Dedicated ~0.5-Acre Parking & Certified Surveys -->
     <section id="location" class="section section--alt">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Two-Tract Campus · Downtown Fayetteville &amp; Huntsville Corridor</span>
+          <span class="eyebrow">Two-Tract Campus · Downtown Fayetteville &amp; Regional Reach</span>
           <h2 class="section-title">Unmatched Off-Street Parking Steps from Historic Town Square</h2>
           <p class="section-subtitle">
             Unlike typical downtown buildings with constrained street parking, 207 Elk Ave S includes both
@@ -556,7 +554,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
               </p>
               <ul class="archetype-list">
                 <li><span><strong>Walkable Downtown Amenities:</strong> Immediate access to Main Avenue dining, pharmacies, banking, and municipal services for providers and patients.</span></li>
-                <li><span><strong>Dedicated 0.5-Acre Parking Parcel:</strong> Eliminates parking bottlenecks for high-volume outpatient clinics, staff shifts, and training cohorts.</span></li>
+                <li><span><strong>Dedicated ~0.5-Acre Parking Parcel:</strong> Eliminates parking bottlenecks for high-volume outpatient clinics and staff shifts.</span></li>
                 <li><span><strong>Hospital &amp; Referral Synergy:</strong> Minutes from Lincoln Medical Center (Huntsville Hospital Health System) for imaging, lab, and inpatient coordination.</span></li>
               </ul>
             </div>
@@ -611,36 +609,57 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
           <span class="eyebrow">Regulatory Compliance &amp; Due Diligence</span>
           <h2 class="section-title">Ownership, Licensing &amp; Information Disclosures</h2>
           <p class="section-subtitle">
-            Statutory licensing exemptions and conceptual rendering disclosures for prospective commercial tenants.
+            Mandatory disclosures, statutory notices, and property disclaimers for prospective commercial tenants.
           </p>
         </div>
 
         <div class="disclosure-grid">
           <article class="disclosure-card">
-            <div class="disclosure-badge">Statutory Notice</div>
-            <h3 class="disclosure-title">Real Estate Licensing &amp; Ownership Disclosure</h3>
+            <div class="disclosure-badge">Owner-Principal Disclosure</div>
+            <h3 class="disclosure-title">Owner-Principal &amp; License Disclosure</h3>
             <div class="disclosure-body">
               <p>
-                The property located at 207 Elk Avenue South, Fayetteville, TN is owned and operated by 207 ELK, LLC. Shazia (Shaz) Perrone is a principal manager and equity owner of 207 ELK, LLC, and is leasing and managing this property directly as a principal owner under Tennessee statutory owner-exemption laws (T.C.A. &sect; 62-13-104).
-              </p>
-              <p>
-                Shazia Perrone holds an active commercial real estate sales associate license in the State of Florida with RealtyMark Solutions, LLC. Shazia Perrone is not a licensed real estate broker or sales affiliate in the State of Tennessee. No licensed real estate brokerage, fiduciary representation, or agency relationship is established, offered, or implied through this website or leasing discussions.
-              </p>
-              <p>
-                All prospective tenants are encouraged to retain independent legal, financial, and licensed commercial real estate advisory counsel.
+                Offered directly by Owner, 207 ELK LLC. Managing Principal holds an active real estate sales associate license in the State of Florida (Lic. #SL3651002) and is not acting as a licensed Tennessee real estate broker or agent.
               </p>
             </div>
           </article>
 
           <article class="disclosure-card">
             <div class="disclosure-badge">Conceptual Advisory</div>
-            <h3 class="disclosure-title">Renderings &amp; Information Disclaimer</h3>
+            <h3 class="disclosure-title">Conceptual Renderings Disclaimer</h3>
             <div class="disclosure-body">
               <p>
-                All architectural visualizations, conceptual renderings, floor plan layouts, design finishes, and proposed tenant buildouts displayed on this website are for illustrative and conceptual purposes only. They represent potential design concepts and ideas, and do not constitute a representation, warranty, or guarantee of final constructed finishes, materials, fixtures, or completed results. Actual building conditions, suite dimensions, and physical improvements are subject to final architectural plans, municipal code approvals, and mutually executed lease agreements.
+                All renovated exterior/interior renderings, architectural concepts, and before-and-after visualizations are for illustrative purposes only. Actual build-out, finishes, signage, and delivery condition are governed solely by an executed lease agreement and applicable municipal approvals.
               </p>
+            </div>
+          </article>
+
+          <article class="disclosure-card">
+            <div class="disclosure-badge">Spatial Verification</div>
+            <h3 class="disclosure-title">Approximate Measurements &amp; Errors/Omissions</h3>
+            <div class="disclosure-body">
               <p>
-                While all information, square footage calculations, operational expenses, and lease specifications presented on this site are believed to be accurate and compiled in good faith, they are subject to change without notice. Unintentional errors or omissions may occur. Ownership reserves the right to modify property specifications, availability, and pricing at any time. Prospective tenants are advised to independently inspect the property and verify all dimensions, zoning allowances, and lease terms prior to contract execution.
+                All square footage figures (~20,256 GSF above-grade), room counts, floorplans, and parcel dimensions (Tract 2: 0.45 AC; 0.84 AC total campus) are approximate and subject to independent tenant verification. Information is deemed reliable but not guaranteed and is subject to change or withdrawal without notice.
+              </p>
+            </div>
+          </article>
+
+          <article class="disclosure-card">
+            <div class="disclosure-badge">Infrastructure Condition</div>
+            <h3 class="disclosure-title">As-Is Clinical Infrastructure &amp; Tenant Compliance</h3>
+            <div class="disclosure-body">
+              <p>
+                Existing plumbing, wet walls, electrical systems, X-ray room shielding, and laboratory rough-ins are offered as-is, where-is. Specialty equipment installation, radiation shielding certification, medical gas, and all practice-specific healthcare licensing and inspections are the sole responsibility of the tenant.
+              </p>
+            </div>
+          </article>
+
+          <article class="disclosure-card">
+            <div class="disclosure-badge">Historical Context</div>
+            <h3 class="disclosure-title">No Affiliation with Former Tenant</h3>
+            <div class="disclosure-body">
+              <p>
+                207 ELK LLC is an independent property owner and is not affiliated with, endorsed by, or sponsored by Huntsville Hospital Health System or Lincoln Health. References to prior medical occupancy are provided strictly for historical context.
               </p>
             </div>
           </article>
@@ -656,7 +675,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
           <h2 class="section-title">Partner Directly with Principal Ownership</h2>
           <p class="section-subtitle">
             Work directly with ownership—without broker friction—to structure a single-floor, phased,
-            or full-building medical lease tailored to your clinical timeline and program goals.
+            or full-building medical lease tailored to your clinical timeline and program goals (Base Rent + pro-rata building expense share / NNN pass-throughs).
           </p>
         </div>
 
@@ -704,7 +723,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                 <span>📍</span>
                 <div>
                   <div style="font-size:0.75rem; color:var(--text-on-dark-muted);">Property Location</div>
-                  <div>207 Elk Ave S (201–207 Elk Ave Campus), Fayetteville, TN 37334</div>
+                  <div>207 Elk Ave S, Fayetteville, TN 37334</div>
                 </div>
               </div>
             </div>
@@ -717,7 +736,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 
           <div class="inquiry-card">
             <h3 style="font-family:var(--font-serif); font-size:1.85rem; margin-bottom:0.35rem;">
-              Generate Custom Tour &amp; Leasing Briefing
+              Generate Custom Leasing Briefing
             </h3>
             <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:1.25rem;">
               Select your clinical specialty and desired suite footprint below. A customized leasing briefing will synchronize in real time for direct discussion with ownership.
@@ -744,17 +763,17 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                   <option value="Dermatology, Aesthetics &amp; Procedure Center">Dermatology &amp; Aesthetics</option>
                   <option value="Physical, Occupational &amp; Pediatric Rehabilitation">Physical &amp; Pediatric Rehabilitation</option>
                   <option value="Behavioral Health, Psychiatry &amp; Counseling">Behavioral Health &amp; Psychiatry</option>
-                  <option value="Healthcare Workforce Training &amp; Allied Health Campus">Healthcare Workforce Training</option>
+                  <option value="Healthcare Administration, Executive &amp; Telehealth Center">Healthcare Administration &amp; Telehealth</option>
                   <option value="Outpatient Medical &amp; Executive Office Suite">Other Outpatient / Medical Specialty</option>
                 </select>
               </div>
               <div>
                 <label class="calc-label" for="inq-footprint">Target Footprint Configuration</label>
                 <select id="inq-footprint" class="calc-select">
-                  <option value="Full Ground Floor Clinical Wing (24+ Plumbed Exam Rooms, 7 Proc Suites)">Full Ground Floor Wing (24+ Rooms, 7 Proc Suites)</option>
+                  <option value="Full Ground Floor Clinical Wing (24+ Plumbed Exam Rooms, 7 Proc Suites, ~12,874 SF)">Full Ground Floor Wing (24+ Rooms, 7 Proc Suites, ~12,874 SF)</option>
                   <option value="Ground Floor Phased Clinical Pod (12–16 Plumbed Rooms)">Ground Floor Clinical Pod (12–16 Rooms)</option>
-                  <option value="Upper Level Executive &amp; Clinical Suite (11 Plumbed Rooms, 16 Offices)">Upper Level Suite (11 Rooms, 16 Offices)</option>
-                  <option value="Full Two-Story Medical Campus (35+ Plumbed Rooms, 17,300 SF)">Full Campus (35+ Plumbed Rooms, 17,300 SF)</option>
+                  <option value="Upper Level Executive &amp; Clinical Suite (11 Plumbed Rooms, 16 Offices, ~7,382 SF)">Upper Level Suite (11 Rooms, 16 Offices, ~7,382 SF)</option>
+                  <option value="Full Two-Story Medical Campus (35+ Plumbed Rooms, ~20,256 GSF)">Full Campus (35+ Plumbed Rooms, ~20,256 GSF)</option>
                 </select>
               </div>
             </div>
@@ -766,7 +785,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
               </div>
               <div>
                 <label class="calc-label" for="inq-notes">Specific Clinical or Lease Notes</label>
-                <input type="text" id="inq-notes" class="calc-input" placeholder="e.g., Ground floor wing + X-ray suite access" />
+                <input type="text" id="inq-notes" class="calc-input" placeholder="e.g., Ground floor wing + diagnostic suite access" />
               </div>
             </div>
 
@@ -819,7 +838,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
   <footer class="site-footer">
     <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
       <div>
-        <strong style="color:#ffffff;">207 Elk Ave S (201–207 Elk Ave S Medical Campus)</strong> · Fayetteville, TN 37334
+        <strong style="color:#ffffff;">207 Elk Ave S</strong> · Fayetteville, TN 37334
         <p style="margin-top:0.25rem;">Owned &amp; Managed by 207 Elk LLC · Principal/Owner: Shaz Perrone · (973) 271-5324 · Shaz.Perrone@gmail.com</p>
       </div>
       <div style="text-align:right;">
