@@ -85,7 +85,7 @@ def build_property_listing() -> PropertyListing:
             id="egress-doors",
             value="7",
             unit_or_label="Ground-Floor Entry & Egress Doors",
-            detail="Seamless separation of main patient arrival, pediatric/sub-waiting, staff access, and emergency egress.",
+            detail="Separate ground-floor exterior doors providing dedicated patient, staff, and service access.",
             category="Patient Flow",
             provenance=Provenance(SOURCE_PDF, (16, 22), "Page 22 Point 9."),
         ),
@@ -154,12 +154,12 @@ def build_property_listing() -> PropertyListing:
                     highlights=(
                         "24+ private exam rooms arranged in efficient double-loaded clinical pods",
                         "Existing cabinetry, sinks, wet-wall plumbing, and medical-grade electrical layouts",
-                        "Direct subfloor utility access for rapid dental chair, laser, or vacuum line connections",
+                        "Turnkey clinical infrastructure ready for immediate equipment connection",
                     ),
                     ideal_uses=(
                         "Primary Care & Family Medicine",
                         "Multi-specialty outpatient clinics",
-                        "Dental operatories & oral hygiene suites",
+                        "Dental & clinical hygiene operatories",
                     ),
                 ),
                 SpaceZone(
@@ -175,7 +175,7 @@ def build_property_listing() -> PropertyListing:
                         "Dedicated Blood Draw station, Clinical Lab room, EKG suite, and Med/Supply closets",
                     ),
                     ideal_uses=(
-                        "Outpatient dermatology, Mohs & aesthetic procedures",
+                        "Outpatient dermatology, aesthetics & clinical procedures",
                         "Urgent care & orthopedic walk-in diagnostics",
                         "On-site phlebotomy and point-of-care testing",
                     ),
@@ -195,7 +195,7 @@ def build_property_listing() -> PropertyListing:
                     ideal_uses=(
                         "Care team charting & triage",
                         "Provider dictation & telemedicine consults",
-                        "Seamless staff circulation & compliant emergency egress",
+                        "Efficient staff circulation and provider consultation",
                     ),
                 ),
             ),
@@ -355,8 +355,8 @@ def build_property_listing() -> PropertyListing:
                 "with luxury vinyl plank flooring and custom millwork in days rather than months."
             ),
             clinical_value=(
-                "Subfloor plumbing access and vertical wet walls allow rapid connection of dental chairs, "
-                "surgical lighting, lasers, and vacuum drainage with zero concrete slab trenching."
+                "Intact wet walls and clinical infrastructure allow rapid fixture connection "
+                "and customization without extensive structural alterations."
             ),
             provenance=Provenance(SOURCE_PDF, (8, 20, 21, 22), "Page 8 Exam Room Original, Renovated & Derm Exam Room."),
         ),
@@ -445,32 +445,32 @@ def build_property_listing() -> PropertyListing:
         ),
         TenantArchetype(
             id="dental-oral-health",
-            specialty="Dental Group, Oral Surgery & Hygiene Clinic",
+            specialty="Dental & Hygiene Clinic",
             icon_name="smile",
-            headline="Subfloor Plumbing Access for Minimal Trenching Operatory Installation",
+            headline="Turnkey Plumbed Operatories for Rapid Practice Launch",
             recommended_configuration="Ground Floor, Upper Floor, or Multi-Level Clinic",
             target_rooms=18,
             why_it_fits=(
-                "Direct subfloor access and stacked vertical wet walls allow dental chair water lines, treated utilities, and vacuum drainage to connect rapidly with minimal concrete slab trenching.",
-                "Dual waiting rooms and separate intake/check-out windows keep high-turnover hygiene patients separated from surgical consultations.",
+                "Existing wet walls and in-place clinical plumbing allow dental chairs, water lines, and clinical utilities to connect efficiently.",
+                "Dual waiting rooms and separate intake/check-out windows keep high-turnover hygiene patients separated from private treatment consultations.",
                 "Built-in sterilization/lab suites on both floors (#235 on Level 2 plus Ground Floor Lab) streamline instrument processing.",
             ),
             infrastructure_match=(
-                "Subfloor utility access + 35+ plumbed rooms across both levels",
+                "Turnkey clinical plumbing + 35+ plumbed rooms across both levels",
                 "Sterilization & laboratory cabinetry already installed",
                 "High-capacity ~0.5-acre parking lot for patient and staff vehicles",
             ),
-            provenance=Provenance(SOURCE_PDF, (19, 20, 21, 26), "Generalized from dental hygiene & subfloor plumbing points 2, 3, 5, 6."),
+            provenance=Provenance(SOURCE_PDF, (19, 20, 21, 26), "Generalized from dental hygiene & plumbing points 2, 3, 5, 6."),
         ),
         TenantArchetype(
             id="dermatology-aesthetics",
-            specialty="Dermatology, Mohs Surgery, Aesthetics & MedSpa",
+            specialty="Dermatology, Aesthetics & MedSpa",
             icon_name="sparkles",
             headline="Elevated Hospitality Arrival Paired with Dedicated Procedure & Laser Suites",
             recommended_configuration="Ground Floor or Custom Phased Suite",
             target_rooms=14,
             why_it_fits=(
-                "7 specialized ground-floor procedure rooms accommodate surgical excisions, Mohs micrographic labs, and energy/laser devices.",
+                "7 specialized ground-floor procedure rooms accommodate skin examinations, aesthetic treatments, and laser/energy devices.",
                 "Front lobby and waiting lounge easily accommodate an upscale patient arrival desk and dedicated clinical consultation suites.",
                 "Walkable historic downtown square location attracts affluent regional patients across the Huntsville–Fayetteville corridor.",
             ),
@@ -588,31 +588,17 @@ def build_property_listing() -> PropertyListing:
                 ),
                 AdvantagePoint(
                     number=6,
-                    title="Subfloor Plumbing & Utility Efficiency",
-                    description="Direct subfloor access and stacked vertical wet walls allow dental chairs, surgical sinks, treated water lines, and vacuum drainage to be connected rapidly with minimal concrete slab trenching.",
-                    pillar_id="turnkey-clinical",
-                    provenance=Provenance(SOURCE_PDF, (21,), "Point 6."),
-                ),
-                AdvantagePoint(
-                    number=7,
                     title="Accelerated Speed to Market",
                     description="Intact clinical partitions, solid-core doors, drop ceilings, medical electrical distribution, and extensive plumbing allow tenants to bypass protracted construction cycles and launch on schedule.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (22,), "Point 7 generalized."),
                 ),
                 AdvantagePoint(
-                    number=8,
+                    number=7,
                     title="Comprehensive Restroom & Central Commercial Elevator",
                     description="12 total restrooms across both floors (8 on Ground, 4 on Upper Level) with ADA-accessible restroom facilities and central commercial elevator access, ensuring adequate fixture capacity for patients and staff.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (14, 22), "Point 8."),
-                ),
-                AdvantagePoint(
-                    number=9,
-                    title="Seamless 7-Door Egress & Circulation",
-                    description="The ground floor features 7 exterior entry/exit doors alongside 3 interior stairwells, enabling dedicated staff entries, contagious-patient isolation, and compliant emergency egress.",
-                    pillar_id="turnkey-clinical",
-                    provenance=Provenance(SOURCE_PDF, (16, 22), "Point 9."),
                 ),
             ),
         ),
@@ -626,35 +612,35 @@ def build_property_listing() -> PropertyListing:
             ),
             points=(
                 AdvantagePoint(
-                    number=10,
+                    number=8,
                     title="Immediate Proximity to Historic Downtown Square",
                     description="Situated as the premier commercial medical building directly behind Fayetteville's historic downtown square, offering providers, staff, and patients walkable access to dining, pharmacies, and civic amenities.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (3, 11, 24), "Point 13."),
                 ),
                 AdvantagePoint(
-                    number=11,
+                    number=9,
                     title="Dedicated ~0.5-Acre Private Parking Lot Across the Street",
                     description="In addition to curbside and on-site building parking (Tract 1: 0.39 AC), ownership provides a dedicated 0.45-acre (~0.5 AC) paved parking parcel directly across Elk Ave S (Tract 2), eliminating parking constraints.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (11, 15, 24), "Point 14 & Page 15 Survey."),
                 ),
                 AdvantagePoint(
-                    number=12,
+                    number=10,
                     title="Geographic Core for the 3-County Catchment Area",
                     description="Centrally situated in Lincoln County along the US-64 / US-231 / US-431 crossroads to draw patients and clinical staff seamlessly across Lincoln, Moore, Giles, Franklin, Coffee, and Bedford counties.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (24,), "Point 15 generalized."),
                 ),
                 AdvantagePoint(
-                    number=13,
+                    number=11,
                     title="Proximity to HH Lincoln Medical Center",
                     description="Located minutes from Lincoln Medical Center (Huntsville Hospital Health System), facilitating seamless physician hospital privileges, diagnostic coordination, and regional referral networks.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (25,), "Point 17 generalized."),
                 ),
                 AdvantagePoint(
-                    number=14,
+                    number=12,
                     title="Positioned in the High-Growth Huntsville / Rocket City Corridor",
                     description="Located directly north of the booming Huntsville, AL metro corridor, capturing rapid cross-border residential growth and accelerating demand for accessible outpatient specialty care.",
                     pillar_id="parking-location",
@@ -667,33 +653,33 @@ def build_property_listing() -> PropertyListing:
             title="Healthcare Heritage, Incentives & Long-Term Ownership Partnership",
             subtitle="Flexible Lease Structures Backed by a Healthcare-Aligned Ownership Team",
             summary=(
-                "Formerly home to HH Lincoln Health Primary Care, 207 Elk Ave S carries decades of "
-                "patient trust and is backed by an ownership team committed to long-term tenant success."
+                "Formerly home to HH Lincoln Health Primary Care, 207 Elk Ave S benefits from established "
+                "recognition and familiarity by the community, backed by an ownership team committed to long-term tenant success."
             ),
             points=(
                 AdvantagePoint(
-                    number=15,
-                    title="Proven Community Healthcare Heritage",
-                    description="Recognized throughout Southern Middle Tennessee as a trusted multi-provider medical facility, providing new tenants with immediate local awareness, patient comfort, and organic clinic volume.",
+                    number=13,
+                    title="Established Community Healthcare Heritage",
+                    description="Recognized throughout Lincoln County as an established medical facility, providing new tenants with immediate local awareness, patient familiarity, and organic community recognition.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (4, 12, 13, 14, 26), "Point 19 generalized."),
                 ),
                 AdvantagePoint(
-                    number=16,
+                    number=14,
                     title="Multi-Specialty & Interprofessional Campus Synergy",
                     description="Substantial clinical capacity across two floors allows a single anchor health system or complementary co-tenants (primary care, dental, rehab, behavioral health, diagnostics) to cross-refer on site.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (26, 27), "Points 20-23 generalized."),
                 ),
                 AdvantagePoint(
-                    number=17,
+                    number=15,
                     title="Incentive & Grant Navigation Support",
                     description="Ownership provides hands-on financial and development expertise to help tenants navigate downtown revitalization programs, Main Street incentives, and rural healthcare infrastructure grants.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (28,), "Point 24 generalized."),
                 ),
                 AdvantagePoint(
-                    number=18,
+                    number=16,
                     title="Flexible Expansion Horizon & Custom Lease Frameworks",
                     description="Cooperative lease structures (Base Rent + pro-rata building expense share / NNN pass-throughs) with expansion options across two floors and adjacent parcels—supported by an ownership team rooted in finance, medicine, and engineering.",
                     pillar_id="partnership-vision",
@@ -771,7 +757,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-exam-derm",
             title="Specialty Procedure & Dermatology Suite (Renovation Concept)",
-            caption="Conceptual renovation rendering showing procedure room configuration with surgical lighting, power exam chair, and laser/device cart (not actual existing condition).",
+            caption="Conceptual renovation rendering showing procedure room configuration with clinical procedure lighting, power exam chair, and laser/device cart (not actual existing condition).",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-procedure-derm.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Derm Exam Room."),
@@ -863,8 +849,8 @@ def build_property_listing() -> PropertyListing:
         headline="Turnkey Medical & Executive Office Campus in Historic Downtown Fayetteville",
         subheadline=(
             "35+ plumbed clinical & exam suites, 7 procedure rooms, on-site diagnostic & lab infrastructure, "
-            "and a dedicated ~0.5-acre parking lot—engineered for streamlined outpatient, specialty, "
-            "dental, and healthcare clinical build-outs."
+            "and a dedicated ~0.5-acre parking lot—engineered for streamlined multi-specialty outpatient clinics "
+            "and healthcare practices."
         ),
         street_address="207 Elk Ave S",
         campus_alias="207 Elk Ave S Medical Campus",
@@ -881,8 +867,7 @@ def build_property_listing() -> PropertyListing:
             "corridor—without incurring $150 to $250+ per square foot in speculative shell build-out costs "
             "or 18-month architectural delays—is one of the greatest challenges facing expanding medical groups.",
             "207 Elk Ave S (formerly HH Lincoln Health Primary Care) delivers a capital-efficient, "
-            "spatially versatile home for primary care, multi-specialty outpatient clinics, urgent care, "
-            "dental & oral surgery, dermatology, physical/occupational rehabilitation, and outpatient behavioral health.",
+            "spatially versatile clinical facility for multi-specialty outpatient clinics and healthcare practices.",
             "Backed by 35+ sink-equipped clinical rooms across two elevator-served floors (~20,256 GSF above-grade), 7 procedure suites, "
             "dedicated diagnostic and laboratory infrastructure rooms, 12 restrooms (with ADA-accessible facilities), and a dedicated ~0.5-acre private parking lot "
             "directly across the street, 207 Elk Ave S provides unmatched speed to market and long-term operational stability.",

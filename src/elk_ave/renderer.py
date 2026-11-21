@@ -303,8 +303,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="overview" class="section section--alt">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Executive Briefing · 207 Elk Ave S</span>
-          <h2 class="section-title">Clinical Infrastructure Readiness Without Cold-Shell Capital Outlay</h2>
+          <span class="eyebrow">Executive Overview</span>
+          <h2 class="section-title">Clinical Infrastructure Readiness</h2>
           <p class="section-subtitle">
             {_esc(listing.executive_summary[0])} {_esc(listing.executive_summary[1])}
           </p>
@@ -320,11 +320,11 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="specialties" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Multi-Discipline Adaptability</span>
-          <h2 class="section-title">Engineered for Every Healthcare &amp; Clinical Specialty</h2>
+          <span class="eyebrow">Clinical Adaptability</span>
+          <h2 class="section-title">Engineered for Multi-Specialty Practices</h2>
           <p class="section-subtitle">
             Select your clinical discipline below to inspect how 207 Elk Ave S’s existing wet walls,
-            procedure rooms, dual waiting lounges, and upper didactic/executive suites align with your practice.
+            procedure rooms, dual waiting lounges, and upper administrative/therapy suites align with your practice.
           </p>
         </div>
 
@@ -371,8 +371,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="transformations" class="section section--dark">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Architectural Transformation Studio</span>
-          <h2 class="section-title">Compare Existing Clinical Infrastructure with Renovated Finish Concepts</h2>
+          <span class="eyebrow">Renovation Concepts</span>
+          <h2 class="section-title">Before &amp; After Architectural Concepts</h2>
           <p class="section-subtitle">
             Drag the interactive split-screen slider across all six property zones to see how cosmetic
             millwork, lighting, and flooring upgrades transform the intact clinical footprint.
@@ -437,8 +437,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
       <div class="container">
         <div class="floor-switcher-bar">
           <div>
-            <span class="eyebrow">Architectural Schematics &amp; Suite Breakdown</span>
-            <h2 class="section-title" style="margin-bottom: 0.25rem;">Interactive Dual-Level Floorplan Explorer</h2>
+            <span class="eyebrow">Floorplans</span>
+            <h2 class="section-title" style="margin-bottom: 0.25rem;">Dual-Level Floorplan Explorer</h2>
             <p class="section-subtitle">
               Lease the Ground Floor (~12,874 SF), the Upper Level (~7,382 SF), or combine both elevator-connected levels (~20,256 GSF) into a custom medical campus.
             </p>
@@ -500,12 +500,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="advantages" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Comprehensive Due Diligence Briefing</span>
-          <h2 class="section-title">Key Strategic Advantages: Why 207 Elk Ave S Anchors Healthcare in Southern Middle Tennessee</h2>
-          <p class="section-subtitle">
-            Distilled from ownership’s institutional property briefing—covering turnkey wet-wall density,
-            dedicated off-street parking, downtown walkability, and flexible lease structures.
-          </p>
+          <span class="eyebrow">Strategic Advantages</span>
+          <h2 class="section-title">Key Strategic Advantages</h2>
         </div>
 
         <div class="pillars-grid">
@@ -518,8 +514,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="location" class="section section--alt">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Two-Tract Campus · Downtown Fayetteville &amp; Regional Reach</span>
-          <h2 class="section-title">Unmatched Off-Street Parking Steps from Historic Town Square</h2>
+          <span class="eyebrow">Parking &amp; Location</span>
+          <h2 class="section-title">Dedicated Off-Street Parking &amp; Campus Location</h2>
           <p class="section-subtitle">
             Unlike typical downtown buildings with constrained street parking, 207 Elk Ave S includes both
             on-site ADA parking on <strong>Tract 1 (0.39 AC)</strong> and a dedicated <strong>0.45-acre (~0.5 AC) paved parking lot (Tract 2)</strong>
@@ -584,8 +580,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="gallery" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Visual Due Diligence Library</span>
-          <h2 class="section-title">Exterior, Clinical Interior, Aerial &amp; Community Gallery</h2>
+          <span class="eyebrow">Media Gallery</span>
+          <h2 class="section-title">Property &amp; Campus Gallery</h2>
           <p class="section-subtitle">
             Filter all 20 high-resolution property photographs, architectural renovation concepts, drone aerials,
             and surveys. Click any card to inspect in fullscreen.
@@ -606,8 +602,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="disclosures" class="section section--alt">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Regulatory Compliance &amp; Due Diligence</span>
-          <h2 class="section-title">Ownership, Licensing &amp; Information Disclosures</h2>
+          <span class="eyebrow">Disclosures</span>
+          <h2 class="section-title">Ownership &amp; Legal Disclosures</h2>
           <p class="section-subtitle">
             Mandatory disclosures, statutory notices, and property disclaimers for prospective commercial tenants.
           </p>
@@ -671,8 +667,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="contact" class="section section--dark">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Direct Ownership Leasing &amp; Partnership</span>
-          <h2 class="section-title">Partner Directly with Principal Ownership</h2>
+          <span class="eyebrow">Direct Leasing</span>
+          <h2 class="section-title">Contact Ownership Directly</h2>
           <p class="section-subtitle">
             Work directly with ownership—without broker friction—to structure a single-floor, phased,
             or full-building medical lease tailored to your clinical timeline and program goals (Base Rent + pro-rata building expense share / NNN pass-throughs).
@@ -759,8 +755,8 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                 <select id="inq-specialty" class="calc-select">
                   <option value="Primary Care &amp; Multi-Specialty Medical Group">Primary Care &amp; Multi-Specialty</option>
                   <option value="Urgent Care, Walk-In &amp; Occupational Medicine">Urgent Care &amp; Occupational Medicine</option>
-                  <option value="Dental Practice &amp; Oral Health Clinic">Dental &amp; Oral Surgery</option>
-                  <option value="Dermatology, Aesthetics &amp; Procedure Center">Dermatology &amp; Aesthetics</option>
+                  <option value="Dental Practice &amp; Oral Health Clinic">Dental &amp; Oral Health</option>
+                  <option value="Dermatology &amp; Aesthetics Clinic">Dermatology &amp; Aesthetics</option>
                   <option value="Physical, Occupational &amp; Pediatric Rehabilitation">Physical &amp; Pediatric Rehabilitation</option>
                   <option value="Behavioral Health, Psychiatry &amp; Counseling">Behavioral Health &amp; Psychiatry</option>
                   <option value="Healthcare Administration, Executive &amp; Telehealth Center">Healthcare Administration &amp; Telehealth</option>

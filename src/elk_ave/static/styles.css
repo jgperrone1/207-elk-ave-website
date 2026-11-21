@@ -589,6 +589,8 @@ textarea {
 /* Hero Visual Showcase */
 .hero-showcase {
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--bg-dark-section);
@@ -611,20 +613,14 @@ textarea {
 }
 
 .hero-view-switcher {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  background: rgba(15, 23, 26, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 12px 18px;
+  background: rgba(15, 23, 26, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 

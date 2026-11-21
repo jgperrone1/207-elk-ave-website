@@ -110,6 +110,15 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             "IBC Group B Medical & Executive Office · 0.84 Total Acres (Building + Dedicated Parking)",
             "TI Capital Preservation Estimator",
             "Fayetteville Public Utilities Easement Survey",
+            "Without Cold-Shell Capital Outlay",
+            "Subfloor Plumbing & Utility Efficiency",
+            "Seamless 7-Door Egress & Circulation",
+            "carries decades of patient trust",
+            "Distilled from ownership’s institutional property briefing",
+            "surgical lighting",
+            "Mohs surgery",
+            "surgical excisions",
+            "oral surgery",
         )
         for phrase in scrubbed_phrases:
             self.assertNotIn(
@@ -119,7 +128,9 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             )
 
         # Audit content verification
-        self.assertIn("Clinical Infrastructure Readiness Without Cold-Shell Capital Outlay", html_output)
+        self.assertIn("Clinical Infrastructure Readiness", html_output)
+        self.assertIn("Engineered for Multi-Specialty Practices", html_output)
+        self.assertIn("recognition and familiarity by the community", html_output)
         self.assertIn("Coming Soon!  Turnkey Clinical Office Space for Lease in Downtown Fayetteville, TN", html_output)
         self.assertIn("Minimal Trenching", html_output)
 
