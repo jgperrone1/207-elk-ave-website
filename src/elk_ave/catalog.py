@@ -89,6 +89,14 @@ def build_property_listing() -> PropertyListing:
             category="Campus Scale",
             provenance=Provenance(SOURCE_PDF, (3, 11, 15), "Two-story above-grade building (~20,256 GSF: 1st Floor ~12,874 GSF + 2nd Floor ~7,382 GSF per tax/appraiser records) and 0.84-acre campus."),
         ),
+        MetricHighlight(
+            id="zoning-campus",
+            value="0.84 AC",
+            unit_or_label="Downtown Medical Campus (C-1)",
+            detail="Two-tract downtown campus (Tract 1: 0.39 AC building parcel + Tract 2: 0.45 AC parking lot) under C-1 commercial zoning.",
+            category="Zoning & Campus",
+            provenance=Provenance(SOURCE_PDF, (11, 15), "Page 15 Survey Tract 1 (0.39 AC) + Tract 2 (0.45 AC) under C-1 commercial zoning."),
+        ),
     )
 
     floors = (
@@ -333,7 +341,7 @@ def build_property_listing() -> PropertyListing:
         TransformationPair(
             id="exam-procedure-suite",
             title="Private Exam & Specialty Procedure Suites",
-            subtitle="35+ Plumbed Clinical Rooms Ready for Immediate Finish Customization",
+            subtitle="35+ Plumbed Clinical Rooms Ready for Streamlined Finish Customization",
             category="Exam & Procedure",
             before_label="Existing Plumbed Exam Room",
             before_image="assets/images/exam-room-original.jpg",
@@ -344,7 +352,7 @@ def build_property_listing() -> PropertyListing:
             description=(
                 "Every exam and procedure room features intact partition walls, solid-core doors, "
                 "wet-wall plumbing with sinks, and medical-grade electrical distribution—upgradable "
-                "with luxury vinyl plank flooring and custom millwork in days rather than months."
+                "with luxury vinyl plank flooring and custom millwork."
             ),
             clinical_value=(
                 "Intact wet walls and clinical infrastructure allow rapid fixture connection "
@@ -420,13 +428,13 @@ def build_property_listing() -> PropertyListing:
             id="urgent-care-diagnostics",
             specialty="Urgent Care, Orthopedic Walk-In & Occupational Medicine",
             icon_name="activity",
-            headline="Rapid Patient Triage with Dedicated Diagnostic Rooms, Procedure Suites & 7 Exterior Doors",
+            headline="Rapid Patient Triage with Dedicated Diagnostic Rooms, Procedure Suites & Separate Access Doors",
             recommended_configuration="Ground Floor (Full or Phased Wing)",
             target_rooms=16,
             why_it_fits=(
                 "Dedicated X-Ray suite with adjacent Reading Room and Dressing Room infrastructure eliminates expensive radiology vault construction (equipment not included).",
                 "7 dedicated procedure rooms support laceration repair, splinting/casting, IV hydration, and occupational drug testing.",
-                "7 ground-floor entry/exit doors allow dedicated ambulance/stretcher transfer or contagious-symptom isolation pathways.",
+                "Dedicated ground-floor entry/exit doors allow separate ambulance/stretcher transfer or contagious-symptom isolation pathways.",
             ),
             infrastructure_match=(
                 "Dedicated diagnostic rooms: X-Ray suite, Phlebotomy Blood Draw & Clinical Lab infrastructure",
@@ -804,7 +812,7 @@ def build_property_listing() -> PropertyListing:
             title="Second Floor Waiting Room",
             caption="Bright, comfortable second-floor waiting lounge featuring natural window light and direct elevator lobby access for patients and visitors.",
             category="Lobby & Waiting",
-            image_path="assets/images/practice-intake-business-office.jpg",
+            image_path="assets/images/practice-pediatric-waiting.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Pediatric Waiting Room."),
             is_conceptual=False,
         ),
@@ -819,8 +827,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-exec-office-furnished",
-            title="Luxuriously Furnished Executive Office Suite",
-            caption="Private executive office suite at 207 Elk Ave S featuring rich hardwood cabinetry, executive workstation desk, natural daylight window, and quiet administrative ambiance.",
+            title="Executive Office Suite",
+            caption="Private executive office suite at 207 Elk Ave S featuring rich hardwood cabinetry, executive workstation desk, natural daylight window, and quiet administrative ambiance (shown furnished for illustration; furnishings not included).",
             category="Executive & Administrative",
             image_path="assets/images/executive-office-furnished.jpg",
             provenance=Provenance(SOURCE_PDF, (10, 13), "Actual property interior photograph."),
@@ -831,7 +839,7 @@ def build_property_listing() -> PropertyListing:
             title="Business & Intake Office Suite",
             caption="Multi-workstation administrative and patient billing office with pass-through window.",
             category="Executive & Administrative",
-            image_path="assets/images/practice-pediatric-waiting.jpg",
+            image_path="assets/images/practice-intake-business-office.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Intake/Business Office."),
             is_conceptual=False,
         ),

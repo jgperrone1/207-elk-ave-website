@@ -716,7 +716,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                 The property located at 207 Elk Avenue South, Fayetteville, TN is owned and operated directly by 207 ELK LLC. Shazia (Shaz) Perrone is a principal manager and equity owner of 207 ELK LLC and is leasing and managing this property directly as a principal owner under Tennessee statutory owner-exemption laws (T.C.A. § 62-13-104).
               </p>
               <p>
-                Shazia Perrone holds an active commercial real estate sales associate license in the State of Florida (Lic. #SL3651002) with RealtyMark Solutions, LLC, and is not acting as—nor is she—a licensed real estate broker or sales affiliate in the State of Tennessee. No licensed real estate brokerage, fiduciary representation, or agency relationship is established, offered, or implied through this website or leasing discussions. All prospective tenants are encouraged to retain independent legal, financial, and licensed commercial real estate advisory counsel.
+                Shazia Perrone holds an active commercial real estate sales associate license in the State of Florida (Lic. #SL3651002), and is not acting as—nor is she—a licensed real estate broker or sales affiliate in the State of Tennessee. No licensed real estate brokerage, fiduciary representation, or agency relationship is established, offered, or implied through this website or leasing discussions. All prospective tenants are encouraged to retain independent legal, financial, and licensed commercial real estate advisory counsel.
               </p>
             </div>
           </article>

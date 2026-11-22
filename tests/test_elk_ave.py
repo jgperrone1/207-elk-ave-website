@@ -89,7 +89,7 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("SL3651002", html_output)
         self.assertIn("207 ELK LLC", html_output)
         self.assertIn("T.C.A. § 62-13-104", html_output)
-        self.assertIn("RealtyMark Solutions, LLC", html_output)
+        self.assertNotIn("RealtyMark Solutions", html_output)
         self.assertIn("Shazia (Shaz) Perrone", html_output)
         self.assertIn("Conceptual Renderings Disclaimer", html_output)
         self.assertIn("Approximate Measurements &amp; Errors/Omissions", html_output)
@@ -139,6 +139,10 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             "High-Volume",
             "high-volume",
             "Minimal Trenching",
+            "7 Exterior Doors",
+            "7 ground-floor entry/exit doors",
+            "in days rather than months",
+            "Immediate Finish Customization",
         )
         for phrase in scrubbed_phrases:
             self.assertNotIn(
@@ -172,11 +176,15 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("Total Above-Grade Gross Building Area", html_output)
         self.assertIn("https://www.google.com/maps/search/?api=1", html_output)
         self.assertIn("(conceptual rendering)", html_output)
+        self.assertIn("Downtown Medical Campus (C-1)", html_output)
+        self.assertIn("35+ Plumbed Clinical Rooms Ready for Streamlined Finish Customization", html_output)
+        self.assertEqual(len(self.listing.metrics), 6)
 
         # Gallery verification
         self.assertIn("Specialty Procedure &amp; Dermatology Suite", html_output)
         self.assertIn("not actual existing condition", html_output)
-        self.assertIn("Luxuriously Furnished Executive Office Suite", html_output)
+        self.assertIn("Executive Office Suite", html_output)
+        self.assertIn("shown furnished for illustration; furnishings not included", html_output)
         self.assertIn("executive-office-furnished.jpg", html_output)
         self.assertIn("gallery-card-badge--conceptual", html_output)
         self.assertIn("gallery-card-badge--actual", html_output)
