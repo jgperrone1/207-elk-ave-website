@@ -692,8 +692,8 @@ def build_property_listing() -> PropertyListing:
     gallery = (
         GalleryAsset(
             id="gal-ext-renovated",
-            title="Renovated Exterior Architectural Rendering (Conceptual)",
-            caption="Conceptual architectural visualization showing modernized brick & dark architectural bronze facade along Elk Ave S.",
+            title="Renovated Exterior Architectural Rendering",
+            caption="Modernized brick & dark architectural bronze facade along Elk Ave S (illustrative visualization).",
             category="Exterior & Aerial",
             image_path="assets/images/exterior_wellness_no_cafe.png",
             provenance=Provenance(SOURCE_PDF, (5, 17), "Page 5 Renovated Exterior."),
@@ -701,7 +701,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-ext-original",
-            title="Current Street-Level Exterior (Actual)",
+            title="Current Street-Level Exterior (207 Elk Ave S)",
             caption="Existing two-story brick & clinical wing facade with curbside and side-lot ADA parking.",
             category="Exterior & Aerial",
             image_path="assets/images/exterior-original.jpg",
@@ -710,7 +710,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-aerial-front",
-            title="Drone View — Elk Ave S Frontage & ADA Parking (Actual)",
+            title="Drone View — Elk Ave S Frontage & ADA Parking",
             caption="Oblique aerial showing main entrance, side ADA parking lot, and covered drive-under bay.",
             category="Exterior & Aerial",
             image_path="assets/images/aerial-front-facade.jpg",
@@ -719,7 +719,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-aerial-campus",
-            title="Drone View — Full Medical Building Footprint (Actual)",
+            title="Drone View — Full Medical Building Footprint",
             caption="Overview of the two-story brick core and single-story clinical exam wing.",
             category="Exterior & Aerial",
             image_path="assets/images/aerial-campus-oblique.jpg",
@@ -728,7 +728,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-aerial-parking-pin",
-            title="Dedicated ~0.5-Acre Parking Parcel Across Elk Ave S (Actual)",
+            title="Dedicated ~0.5-Acre Parking Parcel Across Elk Ave S",
             caption="Private off-street parking lot (Tract 2: 0.45 AC) directly across the street for patients and staff.",
             category="Exterior & Aerial",
             image_path="assets/images/aerial-parking-parcel-pin.jpg",
@@ -737,7 +737,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-aerial-building-boundary",
-            title="Tract 1 Building Parcel Boundary — 0.39 Acres (Actual)",
+            title="Tract 1 Building Parcel Boundary (0.39 Acres)",
             caption="Overhead boundary view of the medical building and on-site parking apron.",
             category="Exterior & Aerial",
             image_path="assets/images/aerial-building-boundary.jpg",
@@ -746,7 +746,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-aerial-parking-boundary",
-            title="Tract 2 Dedicated Parking Lot Boundary — 0.45 Acres (Actual)",
+            title="Tract 2 Dedicated Parking Lot Boundary (0.45 Acres)",
             caption="Overhead boundary view of the dedicated parking parcel directly across Elk Ave S.",
             category="Exterior & Aerial",
             image_path="assets/images/aerial-parking-lot-boundary.jpg",
@@ -755,8 +755,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-exam-renovated",
-            title="Renovated Private Exam Suite Concept (Conceptual)",
-            caption="Conceptual rendering of plumbed clinical exam room with wood-tone flooring, custom cabinetry, and wet-wall sink.",
+            title="Renovated Private Exam Suite",
+            caption="Plumbed clinical exam room with wood-tone flooring, custom cabinetry, and wet-wall sink.",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Exam Room Renovated."),
@@ -764,8 +764,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-exam-derm",
-            title="Specialty Procedure & Dermatology Suite (Renovation Concept — Conceptual)",
-            caption="Conceptual renovation rendering showing procedure room configuration with clinical procedure lighting, power exam chair, and laser/device cart (not actual existing condition).",
+            title="Specialty Procedure & Dermatology Suite",
+            caption="Renovation rendering showing procedure room configuration with clinical procedure lighting, power exam chair, and laser/device cart (not actual existing condition).",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-procedure-derm.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Derm Exam Room."),
@@ -773,8 +773,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-nurses-renovated",
-            title="Renovated Central Nurse Workstation (Conceptual)",
-            caption="Conceptual rendering of modernized care-team triage and charting station with natural window daylight.",
+            title="Renovated Central Nurse Workstation",
+            caption="Modernized care-team triage and charting station with natural window daylight.",
             category="Clinical Interiors",
             image_path="assets/images/nurses-station-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (9,), "Page 9 Nurses Station Renovated."),
@@ -782,7 +782,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-elevator",
-            title="Central Commercial Stainless Elevator Lobby (Actual)",
+            title="Central Commercial Stainless Elevator Lobby",
             caption="Full ADA passenger elevator connecting Ground Level and 2nd Floor clinical wings.",
             category="Clinical Interiors",
             image_path="assets/images/practice-central-elevator.jpg",
@@ -791,8 +791,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-waiting-renovated",
-            title="Hospitality-Inspired Patient Waiting Lounge (Conceptual)",
-            caption="Conceptual warm biophilic waiting room visualization with wood flooring and comfortable seating.",
+            title="Hospitality-Inspired Patient Waiting Lounge",
+            caption="Warm biophilic waiting room visualization with wood flooring and comfortable seating.",
             category="Lobby & Waiting",
             image_path="assets/images/Gemini_No_Cafe.jpeg",
             provenance=Provenance(SOURCE_PDF, (7,), "Page 7 Waiting Room Renovated."),
@@ -800,7 +800,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-main-waiting",
-            title="Existing Primary Waiting Room & Brick Archway (Actual)",
+            title="Existing Primary Waiting Room & Brick Archway",
             caption="Spacious ground-floor waiting lounge with direct sightlines to reception and sub-waiting.",
             category="Lobby & Waiting",
             image_path="assets/images/practice-main-waiting-archway.jpg",
@@ -809,7 +809,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-peds-waiting",
-            title="Dedicated Pediatric / Specialty Sub-Waiting Room (Actual)",
+            title="Dedicated Pediatric / Specialty Sub-Waiting Room",
             caption="Secondary waiting lounge with built-in aquarium window for cohort separation.",
             category="Lobby & Waiting",
             image_path="assets/images/practice-intake-business-office.jpg",
@@ -818,8 +818,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-breakroom-renovated",
-            title="2nd Floor Executive Conference & Staff Lounge Concept (Conceptual)",
-            caption="Conceptual rendering of clear-span 2nd floor lounge with full cabinetry, conference table, and presentation screen.",
+            title="2nd Floor Executive Conference & Staff Lounge",
+            caption="Clear-span 2nd floor lounge with full cabinetry, conference table, and presentation screen.",
             category="Executive & Education",
             image_path="assets/images/breakroom-2nd-floor-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (10,), "Page 10 2nd Floor Breakroom Renovated."),
@@ -827,8 +827,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-exec-office-furnished",
-            title="Luxuriously Furnished Executive Office Suite (Actual)",
-            caption="Actual interior photograph of a private executive office suite at 207 Elk Ave S featuring rich hardwood cabinetry, executive workstation desk, natural daylight window, and quiet administrative ambiance.",
+            title="Luxuriously Furnished Executive Office Suite",
+            caption="Private executive office suite at 207 Elk Ave S featuring rich hardwood cabinetry, executive workstation desk, natural daylight window, and quiet administrative ambiance.",
             category="Executive & Education",
             image_path="assets/images/executive-office-furnished.jpg",
             provenance=Provenance(SOURCE_PDF, (10, 13), "Actual property interior photograph."),
@@ -836,7 +836,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-admin-office",
-            title="Business & Intake Office Suite (Actual)",
+            title="Business & Intake Office Suite",
             caption="Multi-workstation administrative and patient billing office with pass-through window.",
             category="Executive & Education",
             image_path="assets/images/practice-pediatric-waiting.jpg",
@@ -845,7 +845,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-town-square",
-            title="Historic Downtown Fayetteville Town Square — 1 Block Away (Actual)",
+            title="Historic Downtown Fayetteville Town Square (1 Block Away)",
             caption="Walkable historic courthouse square immediately adjacent to 207 Elk Ave S.",
             category="Downtown & Community",
             image_path="assets/images/downtown-town-square-aerial.jpg",
@@ -854,7 +854,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-main-ave",
-            title="Downtown Fayetteville Main Avenue Streetscape (Actual)",
+            title="Downtown Fayetteville Main Avenue Streetscape",
             caption="Vibrant local dining, retail, and historic architecture steps from the medical campus.",
             category="Downtown & Community",
             image_path="assets/images/downtown-main-ave.jpg",
@@ -863,7 +863,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-survey-tracts",
-            title="Boundary Survey — Tract 1 (0.39 AC) & Tract 2 (0.45 AC) (Actual)",
+            title="Boundary Survey — Tract 1 (0.39 AC) & Tract 2 (0.45 AC)",
             caption="Certified boundary survey showing the building parcel and dedicated parking lot across Elk Ave S.",
             category="Floorplans & Surveys",
             image_path="assets/images/survey-two-tracts.png",

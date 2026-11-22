@@ -177,8 +177,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 
     def _render_gallery_card(g: GalleryAsset) -> str:
         type_class = "conceptual" if g.is_conceptual else "actual"
-        type_label = "Conceptual Concept" if g.is_conceptual else "Actual Photo"
-        type_tag = "Conceptual" if g.is_conceptual else "Actual Photo"
+        type_label = "Conceptual Renovation" if g.is_conceptual else "Actual Photo"
         return f"""
         <article class="gallery-item" data-gallery-item="{_esc(g.id)}" data-item-category="{_esc(g.category)}" data-item-type="{type_class}">
           <div class="gallery-thumb">
@@ -188,10 +187,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             <img src="{_esc(_asset(g.image_path))}" alt="{_esc(g.title)}" loading="lazy" />
           </div>
           <div class="gallery-meta">
-            <div class="gallery-meta-top">
-              <span class="gallery-cat">{_esc(g.category)}</span>
-              <span class="gallery-type-tag gallery-type-tag--{type_class}">{type_tag}</span>
-            </div>
+            <div class="gallery-cat">{_esc(g.category)}</div>
             <h3 class="gallery-title">{_esc(g.title)}</h3>
             <p class="gallery-caption">{_esc(g.caption)}</p>
           </div>
@@ -642,11 +638,11 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             </div>
           </div>
 
-          <!-- Conceptual Renovation Concepts Section -->
+          <!-- Conceptual Renovations Section -->
           <div class="gallery-group" id="gallery-conceptual-group" data-group-type="conceptual">
             <div class="gallery-group-header">
               <div class="gallery-group-pill gallery-group-pill--conceptual">
-                ✦ Conceptual Renovation Concepts (Illustrative Only)
+                ✦ Conceptual Renovations (Illustrative Only)
               </div>
               <h3 class="gallery-group-title">Architectural Renovation &amp; Modernization Concepts</h3>
               <p class="gallery-group-desc">
