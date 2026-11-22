@@ -220,9 +220,9 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{_esc(listing.street_address)} | Second-Generation Clinical &amp; Executive Space for Lease — Fayetteville, TN</title>
+  <title>{_esc(listing.street_address)} | Clinical &amp; Executive Space for Lease — Fayetteville, TN</title>
   <meta name="description" content="{_esc(listing.subheadline)}" />
-  <meta property="og:title" content="{_esc(listing.street_address)} — Second-Generation Clinical &amp; Executive Space for Lease" />
+  <meta property="og:title" content="{_esc(listing.street_address)} — Clinical &amp; Executive Space for Lease" />
   <meta property="og:description" content="{_esc(listing.subheadline)}" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://jgperrone1.github.io/207-elk-ave-website/src/elk_ave/static/assets/images/exterior_wellness_no_cafe.png" />
@@ -287,7 +287,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             <span>Coming Soon!</span>
           </div>
           <h1 class="hero-title hero-title--full">
-            <span class="hero-title-line">Second-Generation Clinical Office Space for Lease</span>
+            <span class="hero-title-line">Clinical Office Space for Lease</span>
             <span class="hero-title-subline">Downtown Fayetteville, TN</span>
           </h1>
         </div>
@@ -591,7 +591,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
               </p>
               <ul class="archetype-list">
                 <li><span><strong>Walkable Downtown Amenities:</strong> Immediate access to Main Avenue dining, pharmacies, banking, and municipal services for providers and patients.</span></li>
-                <li><span><strong>Dedicated ~0.5-Acre Parking Parcel:</strong> Eliminates parking bottlenecks for high-volume outpatient clinics and staff shifts.</span></li>
+                <li><span><strong>Dedicated ~0.5-Acre Parking Parcel:</strong> Eliminates parking bottlenecks for outpatient clinics and staff shifts.</span></li>
                 <li><span><strong>Hospital &amp; Referral Synergy:</strong> Minutes from Lincoln Medical Center (Huntsville Hospital Health System) for imaging, lab, and inpatient coordination.</span></li>
               </ul>
             </div>

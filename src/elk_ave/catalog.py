@@ -131,7 +131,7 @@ def build_property_listing() -> PropertyListing:
                         "Dedicated Check-In / Check-Out Reception window, 2 Intake Offices, and secure File Room",
                     ),
                     ideal_uses=(
-                        "High-volume multi-provider check-in",
+                        "Multi-provider check-in",
                         "Well-child vs. sick-visit waiting separation",
                         "Spacious patient arrival lobby and intake reception counter",
                     ),
@@ -401,7 +401,7 @@ def build_property_listing() -> PropertyListing:
             id="multi-specialty-outpatient",
             specialty="Primary Care & Multi-Specialty Medical Group",
             icon_name="stethoscope",
-            headline="Second-Generation High-Volume Outpatient Clinic with Proven Community Heritage",
+            headline="Built-Out Outpatient Clinic with Proven Community Heritage",
             recommended_configuration="Ground Floor (~12,874 GSF) or Full ~20,256 GSF Two-Story Campus",
             target_rooms=24,
             why_it_fits=(
@@ -535,7 +535,7 @@ def build_property_listing() -> PropertyListing:
     pillars = (
         AdvantagePillar(
             id="turnkey-clinical",
-            title="Second-Generation Clinical Infrastructure & Speed to Market",
+            title="Existing Clinical Infrastructure & Speed to Market",
             subtitle="Bypass Protracted Redesign Cycles & Open on Schedule",
             summary=(
                 "Intact clinical partition walls, solid-core doors, medical-grade electrical layouts, "
@@ -866,7 +866,7 @@ def build_property_listing() -> PropertyListing:
 
     return PropertyListing(
         property_id="207-elk-ave-s",
-        headline="Second-Generation Medical & Executive Office Campus in Historic Downtown Fayetteville",
+        headline="Medical & Executive Office Campus in Historic Downtown Fayetteville",
         subheadline=(
             "35+ plumbed clinical & exam suites, 7 procedure rooms, on-site diagnostic & lab infrastructure, "
             "and a dedicated ~0.5-acre parking lot—engineered for streamlined multi-specialty outpatient clinics "
@@ -883,7 +883,7 @@ def build_property_listing() -> PropertyListing:
         parking_lot_acres=0.45,
         total_campus_acres=0.84,
         executive_summary=(
-            "Securing second-generation clinical space in Southern Middle Tennessee and the North Huntsville growth "
+            "Securing built-out clinical space in Southern Middle Tennessee and the North Huntsville growth "
             "corridor—without incurring $150 to $250+ per square foot in speculative shell build-out costs "
             "or 18-month architectural delays—is one of the greatest challenges facing expanding medical groups.",
             "207 Elk Ave S (formerly HH Lincoln Health Primary Care) delivers a capital-efficient, "

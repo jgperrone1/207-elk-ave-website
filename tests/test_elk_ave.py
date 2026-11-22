@@ -132,6 +132,10 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             "(973) 271-5324",
             "Egress Doors",
             '"provenance"',
+            "Second-Generation",
+            "second-generation",
+            "High-Volume",
+            "high-volume",
         )
         for phrase in scrubbed_phrases:
             self.assertNotIn(
@@ -146,7 +150,7 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("recognition and familiarity by the community", html_output)
         self.assertIn("hero-coming-soon-bubble", html_output)
         self.assertIn("Coming Soon!", html_output)
-        self.assertIn("Second-Generation Clinical Office Space for Lease</span>", html_output)
+        self.assertIn("Clinical Office Space for Lease</span>", html_output)
         self.assertNotIn("Turnkey Clinical Office Space for Lease.", html_output)
         self.assertIn("Downtown Fayetteville, TN", html_output)
         self.assertIn("Healthcare Heritage &amp; Ownership Partnership", html_output)
