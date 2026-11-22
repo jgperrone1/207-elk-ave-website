@@ -480,43 +480,59 @@ textarea {
 .hero-coming-soon-badge {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  gap: 12px;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: #ffffff;
-  background: linear-gradient(135deg, #065f46 0%, #0d9488 45%, #0284c7 100%);
-  padding: 8px 18px;
+  background: linear-gradient(115deg, #047857 0%, #0d9488 25%, #0284c7 50%, #4f46e5 75%, #0d9488 100%);
+  background-size: 260% 260%;
+  padding: 12px 28px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 16px rgba(13, 148, 136, 0.35), 0 2px 6px rgba(2, 132, 199, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  margin-bottom: 0.95rem;
+  box-shadow: 0 8px 28px -4px rgba(2, 132, 199, 0.45), 0 4px 14px rgba(13, 148, 136, 0.35), 0 0 24px rgba(79, 70, 229, 0.28);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  animation: gradientFlow 5s ease infinite alternate;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .hero-coming-soon-bubble:hover,
 .hero-coming-soon-badge:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.45), 0 3px 8px rgba(2, 132, 199, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 36px -4px rgba(2, 132, 199, 0.55), 0 6px 20px rgba(13, 148, 136, 0.45), 0 0 32px rgba(79, 70, 229, 0.4);
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .coming-soon-pulse {
   display: inline-block;
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #ffffff;
-  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
-  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9);
+  animation: pulse-ring 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse-ring {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9);
   }
   70% {
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
@@ -526,8 +542,8 @@ textarea {
 .hero-title--full {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(2.2rem, 4.2vw, 3.5rem);
-  line-height: 1.15;
+  font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+  line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--text-primary);
   margin-bottom: 0;
@@ -544,9 +560,10 @@ textarea {
   display: block;
   color: var(--accent-primary);
   font-style: normal;
-  font-weight: 500;
-  font-size: 0.88em;
-  margin-top: 0.25rem;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 2.5vw, 2.2rem);
+  margin-top: 0.4rem;
+  letter-spacing: -0.015em;
 }
 
 .hero::before {
