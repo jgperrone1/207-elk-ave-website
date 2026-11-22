@@ -1,4 +1,4 @@
-"""207 Elk Ave S (201-207 Elk Ave Medical Campus) marketing & leasing platform."""
+"""207 Elk Ave S leasing platform."""
 
 from __future__ import annotations
 

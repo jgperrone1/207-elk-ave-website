@@ -69,13 +69,13 @@ def build_property_listing() -> PropertyListing:
             id="restrooms-ada",
             value="12",
             unit_or_label="Restrooms & Central Elevator",
-            detail="8 ground-floor and 4 second-floor restrooms with full ADA commercial elevator access.",
+            detail="8 ground-floor, 4 second-floor, commercial elevator.",
             category="Accessibility",
             provenance=Provenance(SOURCE_PDF, (14, 16, 22), "Page 22 Point 8 & Page 14 Elevator photo."),
         ),
         MetricHighlight(
             id="dedicated-parking",
-            value="0.5",
+            value="~0.5",
             unit_or_label="Acre Dedicated Parking Parcel",
             detail="Private off-street lot directly across Elk Ave S (Tract 2: 0.45 AC) plus on-site ADA parking.",
             category="Parking & Access",
@@ -85,17 +85,17 @@ def build_property_listing() -> PropertyListing:
             id="egress-doors",
             value="7",
             unit_or_label="Ground-Floor Entry & Egress Doors",
-            detail="Seamless separation of main patient arrival, pediatric/sub-waiting, staff access, and emergency egress.",
+            detail="Separate ground-floor exterior doors providing dedicated patient, staff, and service access.",
             category="Patient Flow",
             provenance=Provenance(SOURCE_PDF, (16, 22), "Page 22 Point 9."),
         ),
         MetricHighlight(
             id="campus-scale",
-            value="17,300 SF",
-            unit_or_label="Total Two-Story Clinical Footprint",
-            detail="Elevator-connected two-story medical facility on a 0.84-acre total downtown campus.",
+            value="~20,256 GSF",
+            unit_or_label="Total Above-Grade Clinical Footprint",
+            detail="Elevator-connected two-story above-grade medical facility (plus basement mechanical/utility level) on a 0.84-acre total downtown campus.",
             category="Campus Scale",
-            provenance=Provenance(SOURCE_PDF, (3, 11, 15), "Two-story building and campus acreage."),
+            provenance=Provenance(SOURCE_PDF, (3, 11, 15), "Two-story above-grade building (~20,256 GSF: 1st Floor ~12,874 SF + 2nd Floor ~7,382 SF per tax/appraiser records) and 0.84-acre campus."),
         ),
     )
 
@@ -103,11 +103,11 @@ def build_property_listing() -> PropertyListing:
         FloorSpec(
             level=1,
             name="Ground Level (1st Floor)",
-            tagline="High-Density Outpatient Clinical, Diagnostic & Procedure Wing",
+            tagline="High-Density Outpatient Clinical, Diagnostic & Procedure Wing (~12,874 GSF)",
             summary=(
                 "Engineered for high-throughput outpatient care with dual waiting rooms, "
                 "dedicated check-in/check-out reception, 24+ plumbed exam rooms, 7 procedure suites, "
-                "4 nurse workstations, X-ray & reading rooms, phlebotomy/lab suites, and 7 exterior doors."
+                "4 nurse workstations, dedicated diagnostic imaging & laboratory infrastructure rooms, and 7 exterior doors."
             ),
             floorplan_image="assets/images/floorplan-level-1.png",
             exam_and_clinical_rooms=24,
@@ -120,10 +120,10 @@ def build_property_listing() -> PropertyListing:
                 "7 dedicated procedure rooms (including Med/Peds procedure suite)",
                 "Dual waiting lounges: Main Waiting Room + Dedicated Pediatric / Specialty Sub-Waiting",
                 "Dedicated Reception, 2 private Intake Offices, and high-density Medical File Room",
-                "On-site X-Ray suite with adjacent Reading Room and Dressing Room",
-                "Dedicated Blood Draw station, Clinical Laboratory, and EKG suite",
+                "Dedicated on-site X-Ray suite with adjacent Reading Room and Dressing Room infrastructure (equipment not included)",
+                "Dedicated Blood Draw station, Clinical Laboratory room, and EKG infrastructure",
                 "4 centralized Nurse Workstations distributed across clinical corridors",
-                "8 ADA-compliant patient and staff restrooms + central stainless commercial elevator",
+                "8 Ground-Floor Restrooms (ADA-accessible restroom facilities) + central stainless commercial elevator",
             ),
             zones=(
                 SpaceZone(
@@ -154,12 +154,12 @@ def build_property_listing() -> PropertyListing:
                     highlights=(
                         "24+ private exam rooms arranged in efficient double-loaded clinical pods",
                         "Existing cabinetry, sinks, wet-wall plumbing, and medical-grade electrical layouts",
-                        "Direct subfloor utility access for rapid dental chair, laser, or vacuum line connections",
+                        "Turnkey clinical infrastructure ready for immediate equipment connection",
                     ),
                     ideal_uses=(
                         "Primary Care & Family Medicine",
                         "Multi-specialty outpatient clinics",
-                        "Dental operatories & oral hygiene suites",
+                        "Dental & clinical hygiene operatories",
                     ),
                 ),
                 SpaceZone(
@@ -167,15 +167,15 @@ def build_property_listing() -> PropertyListing:
                     name="Procedure, Imaging & Diagnostic Wing",
                     floor_level=1,
                     category="Procedures & Diagnostics",
-                    room_count_label="7 Procedure Suites + X-Ray + Lab + EKG",
+                    room_count_label="7 Procedure Suites + Dedicated Diagnostic & Lab Rooms",
                     plumbing_equipped=True,
                     highlights=(
                         "7 specialized procedure rooms along the southern and central clinical wings",
-                        "Dedicated X-Ray suite with private Dressing Room and diagnostic Reading Room",
-                        "Dedicated Blood Draw station, Clinical Lab, EKG room, and Med/Supply closets",
+                        "Dedicated X-Ray suite with private Dressing Room and diagnostic Reading Room infrastructure (equipment not included)",
+                        "Dedicated Blood Draw station, Clinical Lab room, EKG suite, and Med/Supply closets",
                     ),
                     ideal_uses=(
-                        "Outpatient dermatology, Mohs & aesthetic procedures",
+                        "Outpatient dermatology, aesthetics & clinical procedures",
                         "Urgent care & orthopedic walk-in diagnostics",
                         "On-site phlebotomy and point-of-care testing",
                     ),
@@ -195,7 +195,7 @@ def build_property_listing() -> PropertyListing:
                     ideal_uses=(
                         "Care team charting & triage",
                         "Provider dictation & telemedicine consults",
-                        "Seamless staff circulation & compliant emergency egress",
+                        "Efficient staff circulation and provider consultation",
                     ),
                 ),
             ),
@@ -208,12 +208,12 @@ def build_property_listing() -> PropertyListing:
         FloorSpec(
             level=2,
             name="Upper Level (2nd Floor)",
-            tagline="Specialty Clinic, Laboratory, Executive Offices & Training Wing",
+            tagline="Behavioral Health, Outpatient Therapy, Executive Offices & Multi-Purpose Wing (~7,382 GSF)",
             summary=(
-                "Flexible second-story layout accessible via central elevator and three stairwells, "
-                "featuring 11 sink-equipped clinical rooms, a built-in laboratory (#235), a 576 sq ft "
-                "clear-span conference/training hall (#222), a secondary conference/break lounge, "
-                "16+ executive/administrative offices, and 4 restrooms."
+                "Flexible second-story layout accessible via central commercial elevator and three interior stairwells, "
+                "featuring 11 sink-equipped clinical rooms, a built-in laboratory suite (#235), a 576 sq ft "
+                "clear-span multi-purpose conference hall (#222), a secondary conference/break lounge, "
+                "16+ private behavioral health, therapy, or administrative offices, and 4 dedicated restrooms."
             ),
             floorplan_image="assets/images/floorplan-level-2.png",
             exam_and_clinical_rooms=11,
@@ -224,9 +224,9 @@ def build_property_listing() -> PropertyListing:
             key_features=(
                 "11 sink-equipped upper-level clinical exam and treatment rooms",
                 "Built-in laboratory suite (#235) with existing clinical cabinetry and wet walls",
-                "576 sq ft (24 x 24 ft) clear-span Conference / Training Room (#222) plus secondary Conference Lounge",
+                "576 sq ft (24 x 24 ft) clear-span Multi-Purpose Conference / Collaboration Hall (#222) plus secondary Conference Lounge",
                 "Dedicated upper-floor Waiting Lounge and Reception desk right off the elevator lobby",
-                "16+ private executive, behavioral health, or administrative offices along the perimeter",
+                "16+ private executive, behavioral health, counseling, or administrative offices along the perimeter",
                 "2 staff kitchens/breakrooms, abundant archive storage, and 4 dedicated restrooms",
             ),
             zones=(
@@ -238,30 +238,30 @@ def build_property_listing() -> PropertyListing:
                     room_count_label="11 Sink-Equipped Rooms + Lab Suite (#235)",
                     plumbing_equipped=True,
                     highlights=(
-                        "11 plumbed exam/clinical rooms ideal for specialty practice or simulation suites",
+                        "11 plumbed exam/clinical rooms ideal for specialty practice or clinical treatment suites",
                         "Turnkey Laboratory (#235) with built-in cabinetry and plumbing",
                         "Dedicated upper Waiting Room and Reception station adjacent to elevator shaft",
                     ),
                     ideal_uses=(
                         "Specialty clinic or independently leased 2nd-floor practice",
                         "Physical/occupational therapy & rehabilitation gym",
-                        "Clinical simulation & skills laboratory",
+                        "Clinical consultation & procedural support",
                     ),
                 ),
                 SpaceZone(
                     id="l2-conference-training",
-                    name="Clear-Span Conference, Didactic & Staff Lounge Core",
+                    name="Clear-Span Multi-Purpose Conference & Staff Lounge Core",
                     floor_level=2,
-                    category="Conference & Education",
+                    category="Conference & Collaboration",
                     room_count_label="576 SF Hall (#222) + Lounge + 2 Kitchens",
                     plumbing_equipped=True,
                     highlights=(
-                        "Suite #222 offers a 24 x 24 ft (576 sq ft) clear-span lecture, boardroom, or group therapy hall",
+                        "Suite #222 offers a 24 x 24 ft (576 sq ft) clear-span collaboration, boardroom, or group therapy hall",
                         "Expansive 2nd-floor Breakroom / Staff Lounge with natural window light and kitchen cabinetry",
-                        "Supports CME seminars, multi-provider case conferences, and cohort instruction",
+                        "Supports CME seminars, multi-provider case conferences, and clinical team meetings",
                     ),
                     ideal_uses=(
-                        "Continuing medical education (CME) & training cohorts",
+                        "Continuing medical education (CME) & clinical case conferences",
                         "Group behavioral therapy or cardiac/pulmonary rehab",
                         "Physician lounge & staff wellness suite",
                     ),
@@ -355,8 +355,8 @@ def build_property_listing() -> PropertyListing:
                 "with luxury vinyl plank flooring and custom millwork in days rather than months."
             ),
             clinical_value=(
-                "Subfloor plumbing access and vertical wet walls allow rapid connection of dental chairs, "
-                "surgical lighting, lasers, and vacuum drainage with zero concrete slab trenching."
+                "Intact wet walls and clinical infrastructure allow rapid fixture connection "
+                "and customization without extensive structural alterations."
             ),
             provenance=Provenance(SOURCE_PDF, (8, 20, 21, 22), "Page 8 Exam Room Original, Renovated & Derm Exam Room."),
         ),
@@ -382,23 +382,23 @@ def build_property_listing() -> PropertyListing:
         ),
         TransformationPair(
             id="upper-breakroom-conference",
-            title="2nd Floor Conference, Lounge & Didactic Suite",
-            subtitle="Clear-Span Collaboration Space for Providers, Staff & Training Cohorts",
-            category="Executive & Education",
+            title="2nd Floor Conference, Lounge & Collaboration Suite",
+            subtitle="Clear-Span Collaboration Space for Providers, Staff & Clinical Teams",
+            category="Executive & Conference",
             before_label="Existing 2nd Floor Space",
             before_image="assets/images/breakroom-2nd-floor-original.jpg",
             after_label="Renovated Conference & Lounge",
             after_image="assets/images/breakroom-2nd-floor-renovated.jpg",
             alt_image="assets/images/practice-multipurpose-room.jpg",
-            alt_label="Additional Multi-Purpose Training Room",
+            alt_label="Additional Multi-Purpose Room",
             description=(
                 "Generous clear-span dimensions and perimeter windows on the second floor create "
                 "an inviting setting for staff dining, provider board meetings, telehealth operations, "
-                "or 20+ person clinical instruction cohorts."
+                "or multidisciplinary clinical case conferences."
             ),
             clinical_value=(
-                "Supports staff retention, multi-disciplinary case reviews, and academic/clinical training "
-                "programs under the same roof."
+                "Supports staff retention, multi-disciplinary case reviews, and professional clinical "
+                "collaboration under the same roof."
             ),
             provenance=Provenance(SOURCE_PDF, (10, 12, 21), "Page 10 2nd Floor Breakroom Original vs Renovated & Page 21 Point 4."),
         ),
@@ -410,7 +410,7 @@ def build_property_listing() -> PropertyListing:
             specialty="Primary Care & Multi-Specialty Medical Group",
             icon_name="stethoscope",
             headline="Turnkey High-Volume Outpatient Clinic with Proven Community Heritage",
-            recommended_configuration="Ground Floor (Full Wing) or Full 2-Story Campus",
+            recommended_configuration="Ground Floor (~12,874 SF) or Full ~20,256 GSF Two-Story Campus",
             target_rooms=24,
             why_it_fits=(
                 "Known throughout Lincoln County as a trusted primary care destination (formerly HH Lincoln Health Primary Care), offering immediate patient recognition.",
@@ -419,8 +419,8 @@ def build_property_listing() -> PropertyListing:
             ),
             infrastructure_match=(
                 "Dual waiting rooms (Main + Pediatric/Sub-Waiting)",
-                "On-site X-Ray suite, Reading Room, EKG, Blood Draw & Lab",
-                "Dedicated 0.5-acre parking lot across the street + curbside ADA spaces",
+                "Dedicated diagnostic rooms: X-Ray suite, Reading Room, EKG, Blood Draw & Lab",
+                "Dedicated ~0.5-acre parking lot across the street + curbside ADA spaces",
             ),
             provenance=Provenance(SOURCE_PDF, (4, 16, 20, 25, 26), "Generalized from clinical density and healthcare heritage points."),
         ),
@@ -428,16 +428,16 @@ def build_property_listing() -> PropertyListing:
             id="urgent-care-diagnostics",
             specialty="Urgent Care, Orthopedic Walk-In & Occupational Medicine",
             icon_name="activity",
-            headline="Rapid Patient Triage with On-Site X-Ray, Procedure Suites & 7 Exterior Doors",
+            headline="Rapid Patient Triage with Dedicated Diagnostic Rooms, Procedure Suites & 7 Exterior Doors",
             recommended_configuration="Ground Floor (Full or Phased Wing)",
             target_rooms=16,
             why_it_fits=(
-                "Built-in X-Ray room with adjacent Reading Room and Dressing Room eliminates expensive radiology vault construction.",
+                "Dedicated X-Ray suite with adjacent Reading Room and Dressing Room infrastructure eliminates expensive radiology vault construction (equipment not included).",
                 "7 dedicated procedure rooms support laceration repair, splinting/casting, IV hydration, and occupational drug testing.",
                 "7 ground-floor entry/exit doors allow dedicated ambulance/stretcher transfer or contagious-symptom isolation pathways.",
             ),
             infrastructure_match=(
-                "Dedicated X-Ray, Phlebotomy Blood Draw & Clinical Lab",
+                "Dedicated diagnostic rooms: X-Ray suite, Phlebotomy Blood Draw & Clinical Lab infrastructure",
                 "7 procedure suites + 4 centralized nurse triage stations",
                 "Direct access off Elk Ave S in downtown Fayetteville",
             ),
@@ -445,32 +445,32 @@ def build_property_listing() -> PropertyListing:
         ),
         TenantArchetype(
             id="dental-oral-health",
-            specialty="Dental Group, Oral Surgery & Hygiene Clinic",
+            specialty="Dental & Hygiene Clinic",
             icon_name="smile",
-            headline="Subfloor Plumbing Access for Zero-Trenching Operatory Installation",
+            headline="Turnkey Plumbed Operatories for Rapid Practice Launch",
             recommended_configuration="Ground Floor, Upper Floor, or Multi-Level Clinic",
             target_rooms=18,
             why_it_fits=(
-                "Direct subfloor access and stacked vertical wet walls allow dental chair water lines, treated utilities, and vacuum drainage to connect rapidly without concrete slab trenching.",
-                "Dual waiting rooms and separate intake/check-out windows keep high-turnover hygiene patients separated from surgical consultations.",
+                "Existing wet walls and in-place clinical plumbing allow dental chairs, water lines, and clinical utilities to connect efficiently.",
+                "Dual waiting rooms and separate intake/check-out windows keep high-turnover hygiene patients separated from private treatment consultations.",
                 "Built-in sterilization/lab suites on both floors (#235 on Level 2 plus Ground Floor Lab) streamline instrument processing.",
             ),
             infrastructure_match=(
-                "Subfloor utility access + 35+ plumbed rooms across both levels",
+                "Turnkey clinical plumbing + 35+ plumbed rooms across both levels",
                 "Sterilization & laboratory cabinetry already installed",
-                "High-capacity 0.5-acre parking lot for patient and staff vehicles",
+                "High-capacity ~0.5-acre parking lot for patient and staff vehicles",
             ),
-            provenance=Provenance(SOURCE_PDF, (19, 20, 21, 26), "Generalized from dental hygiene & subfloor plumbing points 2, 3, 5, 6."),
+            provenance=Provenance(SOURCE_PDF, (19, 20, 21, 26), "Generalized from dental hygiene & plumbing points 2, 3, 5, 6."),
         ),
         TenantArchetype(
             id="dermatology-aesthetics",
-            specialty="Dermatology, Mohs Surgery, Aesthetics & MedSpa",
+            specialty="Dermatology, Aesthetics & MedSpa",
             icon_name="sparkles",
             headline="Elevated Hospitality Arrival Paired with Dedicated Procedure & Laser Suites",
             recommended_configuration="Ground Floor or Custom Phased Suite",
             target_rooms=14,
             why_it_fits=(
-                "7 specialized ground-floor procedure rooms accommodate surgical excisions, Mohs micrographic labs, and energy/laser devices.",
+                "7 specialized ground-floor procedure rooms accommodate skin examinations, aesthetic treatments, and laser/energy devices.",
                 "Front lobby and waiting lounge easily accommodate an upscale patient arrival desk and dedicated clinical consultation suites.",
                 "Walkable historic downtown square location attracts affluent regional patients across the Huntsville–Fayetteville corridor.",
             ),
@@ -489,7 +489,7 @@ def build_property_listing() -> PropertyListing:
             recommended_configuration="Ground Floor Wing or Upper Level Clinical Suite",
             target_rooms=12,
             why_it_fits=(
-                "Complete ADA compliance with 12 restrooms, zero-step ground entries, wide clinical corridors, and a central commercial passenger elevator.",
+                "Accessible campus with 12 restrooms (including ADA-accessible restroom facilities), zero-step ground entries, wide clinical corridors, and a central commercial passenger elevator.",
                 "576 sq ft clear-span room (#222) plus multi-purpose rooms support open therapeutic exercise, balance training, and ADL simulation.",
                 "Private plumbed exam rooms accommodate 1-on-1 manual therapy, speech/swallow therapy, and pediatric sensory fieldwork.",
             ),
@@ -505,7 +505,7 @@ def build_property_listing() -> PropertyListing:
             specialty="Behavioral Health, Psychiatry & Counseling Center",
             icon_name="brain",
             headline="Private Consultation Offices, Group Therapy Halls & Discreet Patient Flow",
-            recommended_configuration="Upper Level (2nd Floor) or Integrated Multi-Floor Suite",
+            recommended_configuration="Upper Level (~7,382 SF) or Integrated Multi-Floor Suite",
             target_rooms=16,
             why_it_fits=(
                 "Second floor provides 16+ private windowed consultation offices plus 11 clinical rooms for medication management and psychiatric evaluations.",
@@ -521,20 +521,20 @@ def build_property_listing() -> PropertyListing:
         ),
         TenantArchetype(
             id="academic-health-sciences",
-            specialty="Healthcare Workforce Training, Nursing & Allied Health Campus",
-            icon_name="graduation-cap",
-            headline="Turnkey Didactic Classroom, Skills Labs & Public Student Clinic Infrastructure",
-            recommended_configuration="Upper Level, Ground Level, or Phased Multi-Floor Campus",
-            target_rooms=35,
+            specialty="Healthcare Administration, Executive & Telehealth Center",
+            icon_name="briefcase",
+            headline="Dedicated Clinical Management, Telehealth Hub & Private Practice Suites",
+            recommended_configuration="Upper Level (~7,382 SF), Ground Level, or Combined Suites",
+            target_rooms=16,
             why_it_fits=(
-                "Upper suite #222 offers a 24 x 24 ft (576 sq ft) clear-span lecture hall alongside built-in lab #235 and 11 sink-equipped simulation rooms.",
-                "Ground-floor reception, dual waiting rooms, and 24+ exam rooms enable public-facing community clinics without mixing patient traffic with instructional zones.",
-                "Post-secondary instruction and outpatient clinical training utilize existing multi-room clinical pods and clear-span didactic halls without major structural reconfigurations.",
+                "Upper suite #222 provides a 576 sq ft clear-span multi-purpose room alongside built-in lab suite #235 and 11 sink-equipped clinical rooms.",
+                "16+ private windowed offices create a quiet, dedicated environment for healthcare administration, billing, clinical telehealth, and behavioral therapy.",
+                "Separation of ground-floor acute care and second-floor administrative suites supports efficient provider workflow and compliant low-density outpatient operations.",
             ),
             infrastructure_match=(
-                "576 sq ft clear-span classroom + built-in laboratory (#235)",
-                "Turnkey clinical infrastructure for post-secondary medical & nursing training",
-                "0.5-acre dedicated parking lot for commuter cohorts, faculty & patients",
+                "16+ private executive & administrative offices",
+                "576 sq ft clear-span multi-purpose conference suite + built-in lab",
+                "Approx. 0.5-acre dedicated parking parcel directly across Elk Ave S",
             ),
             provenance=Provenance(SOURCE_PDF, (18, 19, 20, 21, 22, 23, 24, 26), "Derived from points 1-12 and 19-23."),
         ),
@@ -554,14 +554,14 @@ def build_property_listing() -> PropertyListing:
                 AdvantagePoint(
                     number=1,
                     title="Multi-Level Selection Flexibility",
-                    description="Total footprint flexibility to lease the ground floor, upper level, or a phased multi-floor campus tailored to exact square footage and clinical program needs.",
+                    description="Total footprint flexibility to lease the ground floor (~12,874 SF), upper level (~7,382 SF), or the full ~20,256 GSF two-story above-grade campus tailored to exact square footage and clinical program needs.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (20,), "Point 1 generalized for all medical tenants."),
                 ),
                 AdvantagePoint(
                     number=2,
                     title="Turnkey Ground-Floor Clinical Density",
-                    description="24+ private ground-floor exam rooms, 7 specialized procedure rooms, X-ray & diagnostic suites, multiple labs, and 4 central nurse stations—all with functional wet walls and sinks.",
+                    description="24+ private ground-floor exam rooms, 7 specialized procedure rooms, dedicated diagnostic imaging (X-Ray) and laboratory infrastructure rooms, and 4 central nurse stations—all with functional wet walls and sinks.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (16, 20), "Point 2 & 1st Floor Plan."),
                 ),
@@ -574,8 +574,8 @@ def build_property_listing() -> PropertyListing:
                 ),
                 AdvantagePoint(
                     number=4,
-                    title="Dedicated Clear-Span Conference & Training Space",
-                    description="Upper suite #222 provides a 24 x 24 ft (576 sq ft) clear-span hall—plus a secondary conference/break lounge—ideal for provider meetings, patient education, rehab, or 20+ person training cohorts.",
+                    title="Dedicated Clear-Span Conference & Collaboration Space",
+                    description="Upper suite #222 provides a 24 x 24 ft (576 sq ft) clear-span hall—plus a secondary conference/break lounge—ideal for provider meetings, patient education, rehab, or clinical case conferences.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (10, 16, 21), "Point 4 generalized."),
                 ),
@@ -588,73 +588,59 @@ def build_property_listing() -> PropertyListing:
                 ),
                 AdvantagePoint(
                     number=6,
-                    title="Subfloor Plumbing & Utility Efficiency",
-                    description="Direct subfloor access and stacked vertical wet walls allow dental chairs, surgical sinks, treated water lines, and vacuum drainage to be connected rapidly with zero concrete slab trenching.",
-                    pillar_id="turnkey-clinical",
-                    provenance=Provenance(SOURCE_PDF, (21,), "Point 6."),
-                ),
-                AdvantagePoint(
-                    number=7,
                     title="Accelerated Speed to Market",
                     description="Intact clinical partitions, solid-core doors, drop ceilings, medical electrical distribution, and extensive plumbing allow tenants to bypass protracted construction cycles and launch on schedule.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (22,), "Point 7 generalized."),
                 ),
                 AdvantagePoint(
-                    number=8,
-                    title="Comprehensive Restroom & ADA Elevator Infrastructure",
-                    description="12 total restrooms across both floors (8 on Ground, 4 on Upper Level) paired with central passenger elevator access ensure full ADA compliance and fixture capacity for patients and staff.",
+                    number=7,
+                    title="Comprehensive Restroom & Central Commercial Elevator",
+                    description="12 total restrooms across both floors (8 on Ground, 4 on Upper Level) with ADA-accessible restroom facilities and central commercial elevator access, ensuring adequate fixture capacity for patients and staff.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (14, 22), "Point 8."),
-                ),
-                AdvantagePoint(
-                    number=9,
-                    title="Seamless 7-Door Egress & Circulation",
-                    description="The ground floor features 7 exterior entry/exit doors alongside 3 interior stairwells, enabling dedicated staff entries, contagious-patient isolation, and compliant emergency egress.",
-                    pillar_id="turnkey-clinical",
-                    provenance=Provenance(SOURCE_PDF, (16, 22), "Point 9."),
                 ),
             ),
         ),
         AdvantagePillar(
             id="parking-location",
             title="Unmatched Parking, Downtown Walkability & Regional Reach",
-            subtitle="Dedicated 0.5-Acre Parking Lot + Huntsville Growth Corridor Position",
+            subtitle="Dedicated ~0.5-Acre Parking Lot + Regional Highway Crossroads",
             summary=(
                 "Rare downtown medical campus combining immediate walkability to Fayetteville's historic "
                 "Town Square with a dedicated half-acre private parking parcel directly across Elk Ave S."
             ),
             points=(
                 AdvantagePoint(
-                    number=10,
+                    number=8,
                     title="Immediate Proximity to Historic Downtown Square",
                     description="Situated as the premier commercial medical building directly behind Fayetteville's historic downtown square, offering providers, staff, and patients walkable access to dining, pharmacies, and civic amenities.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (3, 11, 24), "Point 13."),
                 ),
                 AdvantagePoint(
-                    number=11,
-                    title="Dedicated 0.5-Acre Private Parking Lot Across the Street",
-                    description="In addition to curbside and on-site ADA building parking (Tract 1: 0.39 AC), ownership provides a dedicated 0.45-acre (~0.5 AC) paved parking parcel directly across Elk Ave S (Tract 2), eliminating parking constraints.",
+                    number=9,
+                    title="Dedicated ~0.5-Acre Private Parking Lot Across the Street",
+                    description="In addition to curbside and on-site building parking (Tract 1: 0.39 AC), ownership provides a dedicated 0.45-acre (~0.5 AC) paved parking parcel directly across Elk Ave S (Tract 2), eliminating parking constraints.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (11, 15, 24), "Point 14 & Page 15 Survey."),
                 ),
                 AdvantagePoint(
-                    number=12,
+                    number=10,
                     title="Geographic Core for the 3-County Catchment Area",
                     description="Centrally situated in Lincoln County along the US-64 / US-231 / US-431 crossroads to draw patients and clinical staff seamlessly across Lincoln, Moore, Giles, Franklin, Coffee, and Bedford counties.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (24,), "Point 15 generalized."),
                 ),
                 AdvantagePoint(
-                    number=13,
+                    number=11,
                     title="Proximity to HH Lincoln Medical Center",
                     description="Located minutes from Lincoln Medical Center (Huntsville Hospital Health System), facilitating seamless physician hospital privileges, diagnostic coordination, and regional referral networks.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (25,), "Point 17 generalized."),
                 ),
                 AdvantagePoint(
-                    number=14,
+                    number=12,
                     title="Positioned in the High-Growth Huntsville / Rocket City Corridor",
                     description="Located directly north of the booming Huntsville, AL metro corridor, capturing rapid cross-border residential growth and accelerating demand for accessible outpatient specialty care.",
                     pillar_id="parking-location",
@@ -664,38 +650,38 @@ def build_property_listing() -> PropertyListing:
         ),
         AdvantagePillar(
             id="partnership-vision",
-            title="Healthcare Heritage, Incentives & Long-Term Ownership Partnership",
-            subtitle="Flexible Lease Structures Backed by a Healthcare-Aligned Ownership Team",
+            title="Healthcare Heritage & Ownership Partnership",
+            subtitle="Flexible Lease Structures Backed by Ownership",
             summary=(
-                "Formerly home to HH Lincoln Health Primary Care, 207 Elk Ave S carries decades of "
-                "patient trust and is backed by an ownership team committed to long-term tenant success."
+                "Formerly home to HH Lincoln Health Primary Care, 207 Elk Ave S benefits from established "
+                "recognition and familiarity by the community, backed by an ownership team committed to long-term tenant success."
             ),
             points=(
                 AdvantagePoint(
-                    number=15,
-                    title="Proven Community Healthcare Heritage",
-                    description="Recognized throughout Southern Middle Tennessee as a trusted multi-provider medical facility, providing new tenants with immediate local awareness, patient comfort, and organic clinic volume.",
+                    number=13,
+                    title="Established Community Healthcare Heritage",
+                    description="Recognized throughout Lincoln County as an established medical facility, providing new tenants with immediate local awareness, patient familiarity, and organic community recognition.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (4, 12, 13, 14, 26), "Point 19 generalized."),
                 ),
                 AdvantagePoint(
-                    number=16,
+                    number=14,
                     title="Multi-Specialty & Interprofessional Campus Synergy",
                     description="Substantial clinical capacity across two floors allows a single anchor health system or complementary co-tenants (primary care, dental, rehab, behavioral health, diagnostics) to cross-refer on site.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (26, 27), "Points 20-23 generalized."),
                 ),
                 AdvantagePoint(
-                    number=17,
-                    title="Incentive & Grant Navigation Support",
-                    description="Ownership provides hands-on financial and development expertise to help tenants navigate downtown revitalization programs, Main Street incentives, and rural healthcare infrastructure grants.",
+                    number=15,
+                    title="Assistance Seeking Local Incentives",
+                    description="Ownership provides assistance to tenants seeking applicable local municipal programs and downtown revitalization incentives.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (28,), "Point 24 generalized."),
                 ),
                 AdvantagePoint(
-                    number=18,
+                    number=16,
                     title="Flexible Expansion Horizon & Custom Lease Frameworks",
-                    description="Cooperative long-term institutional and private practice lease structures with expansion rights across two floors and adjacent parcels—supported by an ownership team rooted in finance, medicine, and engineering.",
+                    description="Cooperative lease structures (Base Rent + pro-rata building expense share / NNN pass-throughs) with expansion options across two floors and adjacent parcels—supported by an ownership team rooted in finance, medicine, and engineering.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (18, 28, 29), "Points 25-28 generalized."),
                 ),
@@ -738,7 +724,7 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-aerial-parking-pin",
-            title="Dedicated 0.5-Acre Parking Parcel Across Elk Ave S",
+            title="Dedicated ~0.5-Acre Parking Parcel Across Elk Ave S",
             caption="Private off-street parking lot (Tract 2: 0.45 AC) directly across the street for patients and staff.",
             category="Exterior & Aerial",
             image_path="assets/images/aerial-parking-parcel-pin.jpg",
@@ -771,7 +757,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-exam-derm",
             title="Specialty Procedure & Dermatology Suite (Renovation Concept)",
-            caption="Conceptual renovation rendering showing procedure room configuration with surgical lighting, power exam chair, and laser/device cart (not actual existing condition).",
+            caption="Conceptual renovation rendering showing procedure room configuration with clinical procedure lighting, power exam chair, and laser/device cart (not actual existing condition).",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-procedure-derm.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Derm Exam Room."),
@@ -862,12 +848,12 @@ def build_property_listing() -> PropertyListing:
         property_id="207-elk-ave-s",
         headline="Turnkey Medical & Executive Office Campus in Historic Downtown Fayetteville",
         subheadline=(
-            "35+ plumbed clinical & exam suites, 7 procedure rooms, on-site X-ray & lab infrastructure, "
-            "and a dedicated 0.5-acre parking lot—engineered for immediate outpatient, specialty, "
-            "dental, and healthcare clinical operations."
+            "35+ plumbed clinical & exam suites, 7 procedure rooms, on-site diagnostic & lab infrastructure, "
+            "and a dedicated ~0.5-acre parking lot—engineered for streamlined multi-specialty outpatient clinics "
+            "and healthcare practices."
         ),
         street_address="207 Elk Ave S",
-        campus_alias="201–207 Elk Ave S Medical Campus",
+        campus_alias="207 Elk Ave S Medical Campus",
         city="Fayetteville",
         state="TN",
         postal_code="37334",
@@ -880,12 +866,10 @@ def build_property_listing() -> PropertyListing:
             "Securing turnkey clinical space in Southern Middle Tennessee and the North Huntsville growth "
             "corridor—without incurring $150 to $250+ per square foot in speculative shell build-out costs "
             "or 18-month architectural delays—is one of the greatest challenges facing expanding medical groups.",
-            "207 Elk Ave S (formerly HH Lincoln Health Primary Care) delivers an immediate, capital-efficient, "
-            "and spatially versatile home for primary care, multi-specialty outpatient clinics, urgent care, "
-            "dental & oral surgery, dermatology, physical/occupational rehabilitation, behavioral health, and "
-            "health sciences training cohorts.",
-            "Backed by 35+ sink-equipped clinical rooms across two elevator-served floors, 7 procedure suites, "
-            "on-site X-ray and laboratory rooms, 12 ADA restrooms, and a dedicated half-acre private parking lot "
+            "207 Elk Ave S (formerly HH Lincoln Health Primary Care) delivers a capital-efficient, "
+            "spatially versatile clinical facility for multi-specialty outpatient clinics and healthcare practices.",
+            "Backed by 35+ sink-equipped clinical rooms across two elevator-served floors (~20,256 GSF above-grade), 7 procedure suites, "
+            "dedicated diagnostic and laboratory infrastructure rooms, 12 restrooms (with ADA-accessible facilities), and a dedicated ~0.5-acre private parking lot "
             "directly across the street, 207 Elk Ave S provides unmatched speed to market and long-term operational stability.",
         ),
         metrics=metrics,
@@ -900,10 +884,10 @@ def build_property_listing() -> PropertyListing:
             "nearby_hospital": "HH Lincoln Medical Center (Minutes Away)",
             "catchment_counties": ["Lincoln", "Moore", "Giles", "Franklin", "Coffee", "Bedford", "Madison (AL)"],
             "lease_structures": [
-                "Ground Floor Clinical Wing",
-                "Upper Level Specialty / Executive / Didactic Wing",
+                "Ground Floor Clinical Wing (~12,874 SF)",
+                "Upper Level Specialty / Executive Wing (~7,382 SF)",
                 "Phased Multi-Floor Custom Suite",
-                "Full-Building Single-Tenant Medical Campus",
+                "Full Two-Story Campus (~20,256 GSF)",
             ],
         },
     )
