@@ -242,12 +242,12 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="top" class="hero">
       <div class="container">
         <div class="hero-header-full">
-          <div class="hero-coming-soon-badge">
+          <div class="hero-coming-soon-bubble">
             <span class="coming-soon-pulse"></span>
-            <span>Coming Soon</span>
+            <span>Coming Soon!</span>
           </div>
           <h1 class="hero-title hero-title--full">
-            <span class="hero-title-line">Turnkey Clinical Office Space for Lease.</span>
+            <span class="hero-title-line">Turnkey Clinical Office Space for Lease</span>
             <span class="hero-title-subline">Downtown Fayetteville, TN</span>
           </h1>
         </div>
