@@ -227,7 +227,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
         </span>
       </a>
 
-      <nav class="header-nav" aria-label="Primary Navigation">
+      <nav id="primary-navigation" class="header-nav" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li><a href="#overview">Overview</a></li>
           <li><a href="#specialties">Specialties</a></li>
@@ -242,6 +242,20 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 
       <div class="header-actions">
         <button type="button" id="theme-toggle-btn" class="icon-btn" aria-label="Toggle color theme">🌙</button>
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="icon-btn mobile-menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
