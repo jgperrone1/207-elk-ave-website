@@ -693,10 +693,11 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-ext-renovated",
             title="Renovated Exterior Architectural Rendering",
-            caption="Modernized brick & dark architectural bronze facade concept along Elk Ave S.",
+            caption="Modernized brick & dark architectural bronze facade along Elk Ave S (illustrative visualization).",
             category="Exterior & Aerial",
             image_path="assets/images/exterior_wellness_no_cafe.png",
             provenance=Provenance(SOURCE_PDF, (5, 17), "Page 5 Renovated Exterior."),
+            is_conceptual=True,
         ),
         GalleryAsset(
             id="gal-ext-original",
@@ -705,6 +706,7 @@ def build_property_listing() -> PropertyListing:
             category="Exterior & Aerial",
             image_path="assets/images/exterior-original.jpg",
             provenance=Provenance(SOURCE_PDF, (4,), "Page 4 Original Exterior."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-aerial-front",
@@ -713,6 +715,7 @@ def build_property_listing() -> PropertyListing:
             category="Exterior & Aerial",
             image_path="assets/images/aerial-front-facade.jpg",
             provenance=Provenance(SOURCE_PDF, (11,), "Page 11 Aerial View 1."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-aerial-campus",
@@ -721,6 +724,7 @@ def build_property_listing() -> PropertyListing:
             category="Exterior & Aerial",
             image_path="assets/images/aerial-campus-oblique.jpg",
             provenance=Provenance(SOURCE_PDF, (11,), "Page 11 Aerial View 2."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-aerial-parking-pin",
@@ -729,6 +733,7 @@ def build_property_listing() -> PropertyListing:
             category="Exterior & Aerial",
             image_path="assets/images/aerial-parking-parcel-pin.jpg",
             provenance=Provenance(SOURCE_PDF, (11,), "Page 11 Aerial View 3."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-aerial-building-boundary",
@@ -737,6 +742,7 @@ def build_property_listing() -> PropertyListing:
             category="Exterior & Aerial",
             image_path="assets/images/aerial-building-boundary.jpg",
             provenance=Provenance(SOURCE_PDF, (11,), "Page 11 Aerial View 5."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-aerial-parking-boundary",
@@ -745,22 +751,25 @@ def build_property_listing() -> PropertyListing:
             category="Exterior & Aerial",
             image_path="assets/images/aerial-parking-lot-boundary.jpg",
             provenance=Provenance(SOURCE_PDF, (11,), "Page 11 Aerial View 6."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-exam-renovated",
-            title="Renovated Private Exam Suite Concept",
+            title="Renovated Private Exam Suite",
             caption="Plumbed clinical exam room with wood-tone flooring, custom cabinetry, and wet-wall sink.",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Exam Room Renovated."),
+            is_conceptual=True,
         ),
         GalleryAsset(
             id="gal-exam-derm",
-            title="Specialty Procedure & Dermatology Suite (Renovation Concept)",
-            caption="Conceptual renovation rendering showing procedure room configuration with clinical procedure lighting, power exam chair, and laser/device cart (not actual existing condition).",
+            title="Specialty Procedure & Dermatology Suite",
+            caption="Renovation rendering showing procedure room configuration with clinical procedure lighting, power exam chair, and laser/device cart (not actual existing condition).",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-procedure-derm.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Derm Exam Room."),
+            is_conceptual=True,
         ),
         GalleryAsset(
             id="gal-nurses-renovated",
@@ -769,6 +778,7 @@ def build_property_listing() -> PropertyListing:
             category="Clinical Interiors",
             image_path="assets/images/nurses-station-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (9,), "Page 9 Nurses Station Renovated."),
+            is_conceptual=True,
         ),
         GalleryAsset(
             id="gal-elevator",
@@ -777,14 +787,16 @@ def build_property_listing() -> PropertyListing:
             category="Clinical Interiors",
             image_path="assets/images/practice-central-elevator.jpg",
             provenance=Provenance(SOURCE_PDF, (14,), "Page 14 Elevator Lobby."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-waiting-renovated",
             title="Hospitality-Inspired Patient Waiting Lounge",
-            caption="Warm biophilic waiting room concept with wood flooring and comfortable seating.",
+            caption="Warm biophilic waiting room visualization with wood flooring and comfortable seating.",
             category="Lobby & Waiting",
             image_path="assets/images/Gemini_No_Cafe.jpeg",
             provenance=Provenance(SOURCE_PDF, (7,), "Page 7 Waiting Room Renovated."),
+            is_conceptual=True,
         ),
         GalleryAsset(
             id="gal-main-waiting",
@@ -793,6 +805,7 @@ def build_property_listing() -> PropertyListing:
             category="Lobby & Waiting",
             image_path="assets/images/practice-main-waiting-archway.jpg",
             provenance=Provenance(SOURCE_PDF, (14,), "Page 14 Main Waiting Room."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-peds-waiting",
@@ -801,14 +814,25 @@ def build_property_listing() -> PropertyListing:
             category="Lobby & Waiting",
             image_path="assets/images/practice-intake-business-office.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Pediatric Waiting Room."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-breakroom-renovated",
-            title="2nd Floor Executive Conference & Staff Lounge Concept",
+            title="2nd Floor Executive Conference & Staff Lounge",
             caption="Clear-span 2nd floor lounge with full cabinetry, conference table, and presentation screen.",
             category="Executive & Education",
             image_path="assets/images/breakroom-2nd-floor-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (10,), "Page 10 2nd Floor Breakroom Renovated."),
+            is_conceptual=True,
+        ),
+        GalleryAsset(
+            id="gal-exec-office-furnished",
+            title="Luxuriously Furnished Executive Office Suite",
+            caption="Private executive office suite at 207 Elk Ave S featuring rich hardwood cabinetry, executive workstation desk, natural daylight window, and quiet administrative ambiance.",
+            category="Executive & Education",
+            image_path="assets/images/executive-office-furnished.jpg",
+            provenance=Provenance(SOURCE_PDF, (10, 13), "Actual property interior photograph."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-admin-office",
@@ -817,6 +841,7 @@ def build_property_listing() -> PropertyListing:
             category="Executive & Education",
             image_path="assets/images/practice-pediatric-waiting.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Intake/Business Office."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-town-square",
@@ -825,6 +850,7 @@ def build_property_listing() -> PropertyListing:
             category="Downtown & Community",
             image_path="assets/images/downtown-town-square-aerial.jpg",
             provenance=Provenance(SOURCE_PDF, (3,), "Page 3 Town Square."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-main-ave",
@@ -833,6 +859,7 @@ def build_property_listing() -> PropertyListing:
             category="Downtown & Community",
             image_path="assets/images/downtown-main-ave.jpg",
             provenance=Provenance(SOURCE_PDF, (3,), "Page 3 Main Ave."),
+            is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-survey-tracts",
@@ -841,6 +868,7 @@ def build_property_listing() -> PropertyListing:
             category="Floorplans & Surveys",
             image_path="assets/images/survey-two-tracts.png",
             provenance=Provenance(SOURCE_PDF, (15,), "Page 15 2-Tract Survey."),
+            is_conceptual=False,
         ),
     )
 

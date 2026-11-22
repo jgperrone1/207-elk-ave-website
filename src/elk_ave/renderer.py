@@ -174,10 +174,16 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
         f"""<button type="button" class="archetype-pill{' active' if cat == 'All' else ''}" data-gallery-cat="{_esc(cat)}">{_esc(cat)}</button>"""
         for cat in gallery_categories
     )
-    gallery_items_html = "\n".join(
-        f"""
-        <article class="gallery-item" data-gallery-item="{_esc(g.id)}" data-item-category="{_esc(g.category)}">
+
+    def _render_gallery_card(g: GalleryAsset) -> str:
+        type_class = "conceptual" if g.is_conceptual else "actual"
+        type_label = "Conceptual Renovation" if g.is_conceptual else "Actual Photo"
+        return f"""
+        <article class="gallery-item" data-gallery-item="{_esc(g.id)}" data-item-category="{_esc(g.category)}" data-item-type="{type_class}">
           <div class="gallery-thumb">
+            <span class="gallery-card-badge gallery-card-badge--{type_class}">
+              {type_label}
+            </span>
             <img src="{_esc(_asset(g.image_path))}" alt="{_esc(g.title)}" loading="lazy" />
           </div>
           <div class="gallery-meta">
@@ -187,8 +193,11 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
           </div>
         </article>
         """
-        for g in listing.gallery
-    )
+
+    actual_gallery_cards = "\n".join(_render_gallery_card(g) for g in listing.gallery if not g.is_conceptual)
+    conceptual_gallery_cards = "\n".join(_render_gallery_card(g) for g in listing.gallery if g.is_conceptual)
+    actual_count = sum(1 for g in listing.gallery if not g.is_conceptual)
+    conceptual_count = sum(1 for g in listing.gallery if g.is_conceptual)
 
     return f"""<!DOCTYPE html>
 <html lang="en" data-theme="light"{html_prefix_attr}>
@@ -218,7 +227,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
         </span>
       </a>
 
-      <nav class="header-nav" aria-label="Primary Navigation">
+      <nav id="primary-navigation" class="header-nav" aria-label="Primary Navigation">
         <ul class="nav-links">
           <li><a href="#overview">Overview</a></li>
           <li><a href="#specialties">Specialties</a></li>
@@ -233,6 +242,20 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 
       <div class="header-actions">
         <button type="button" id="theme-toggle-btn" class="icon-btn" aria-label="Toggle color theme">🌙</button>
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="icon-btn mobile-menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -588,17 +611,62 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
           <span class="eyebrow">Media Gallery</span>
           <h2 class="section-title">Property &amp; Campus Gallery</h2>
           <p class="section-subtitle">
-            Filter all 20 high-resolution property photographs, architectural renovation concepts, drone aerials,
-            and surveys. Click any card to inspect in fullscreen.
+            Explore authentic property photographs of 207 Elk Ave S alongside conceptual architectural renovation concepts. Click any card to inspect in fullscreen.
           </p>
         </div>
 
-        <div class="gallery-filters" role="group" aria-label="Gallery Category Filter">
-          {gallery_filters_html}
+        <div class="gallery-controls-bar">
+          <div class="gallery-segment-control" role="group" aria-label="Photo Type Selector">
+            <button type="button" class="gallery-segment-btn active" data-gallery-type="all">
+              All Views ({len(listing.gallery)})
+            </button>
+            <button type="button" class="gallery-segment-btn" data-gallery-type="actual">
+              <span class="segment-indicator segment-indicator--actual"></span>
+              Actual Property Photos ({actual_count})
+            </button>
+            <button type="button" class="gallery-segment-btn" data-gallery-type="conceptual">
+              <span class="segment-indicator segment-indicator--conceptual"></span>
+              Conceptual Renovations ({conceptual_count})
+            </button>
+          </div>
+
+          <div class="gallery-filters" role="group" aria-label="Gallery Category Filter">
+            {gallery_filters_html}
+          </div>
         </div>
 
-        <div class="gallery-grid">
-          {gallery_items_html}
+        <div class="gallery-groups-container">
+          <!-- Actual Property Photographs Section -->
+          <div class="gallery-group" id="gallery-actual-group" data-group-type="actual">
+            <div class="gallery-group-header">
+              <div class="gallery-group-pill gallery-group-pill--actual">
+                ● Actual Property Photographs (Existing Condition)
+              </div>
+              <h3 class="gallery-group-title">Authentic Interior, Exterior, Aerial &amp; Campus Views</h3>
+              <p class="gallery-group-desc">
+                Current photography showing the intact clinical exam suites, furnished executive offices, commercial elevator lobby, waiting rooms, campus streetscape, and certified boundary surveys.
+              </p>
+            </div>
+            <div class="gallery-grid" id="gallery-actual-grid">
+              {actual_gallery_cards}
+            </div>
+          </div>
+
+          <!-- Conceptual Renovations Section -->
+          <div class="gallery-group" id="gallery-conceptual-group" data-group-type="conceptual">
+            <div class="gallery-group-header">
+              <div class="gallery-group-pill gallery-group-pill--conceptual">
+                ✦ Conceptual Renovations (Illustrative Only)
+              </div>
+              <h3 class="gallery-group-title">Architectural Renovation &amp; Modernization Concepts</h3>
+              <p class="gallery-group-desc">
+                Conceptual renderings showing potential cosmetic millwork, lighting, flooring, and care-team station upgrades across patient care suites (actual delivery condition governed by lease terms).
+              </p>
+            </div>
+            <div class="gallery-grid" id="gallery-conceptual-grid">
+              {conceptual_gallery_cards}
+            </div>
+          </div>
         </div>
       </div>
     </section>

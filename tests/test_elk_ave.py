@@ -143,8 +143,24 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("Minimal Trenching", html_output)
 
         # Gallery verification
-        self.assertIn("Specialty Procedure &amp; Dermatology Suite (Renovation Concept)", html_output)
+        self.assertIn("Specialty Procedure &amp; Dermatology Suite", html_output)
         self.assertIn("not actual existing condition", html_output)
+        self.assertIn("Luxuriously Furnished Executive Office Suite", html_output)
+        self.assertIn("executive-office-furnished.jpg", html_output)
+        self.assertIn("gallery-card-badge--conceptual", html_output)
+        self.assertIn("gallery-card-badge--actual", html_output)
+        self.assertIn("Conceptual Renovation", html_output)
+        self.assertNotIn("Conceptual Concept", html_output)
+        self.assertNotIn("gallery-type-tag", html_output)
+        self.assertIn("Actual Property Photographs (Existing Condition)", html_output)
+        self.assertIn("Conceptual Renovations (Illustrative Only)", html_output)
+
+        # Verify gallery conceptual segregation
+        actual_assets = [g for g in self.listing.gallery if not g.is_conceptual]
+        conceptual_assets = [g for g in self.listing.gallery if g.is_conceptual]
+        self.assertEqual(len(actual_assets), 14)
+        self.assertEqual(len(conceptual_assets), 6)
+        self.assertEqual(len(self.listing.gallery), 20)
 
     def test_provenance_preserved_across_all_entities(self) -> None:
         for metric in self.listing.metrics:
@@ -300,13 +316,17 @@ class RendererAndServerTests(unittest.TestCase):
     def test_top_header_and_button_alignment_contract(self) -> None:
         listing = build_property_listing()
         html_output = render_index_html(listing)
-        self.assertIn('<nav class="header-nav" aria-label="Primary Navigation">', html_output)
+        self.assertIn('<nav id="primary-navigation" class="header-nav" aria-label="Primary Navigation">', html_output)
+        self.assertIn('id="mobile-menu-btn"', html_output)
+        self.assertIn('class="icon-btn mobile-menu-toggle"', html_output)
         self.assertNotIn('>Schedule Tour</a>', html_output)
         self.assertIn('>Contact For Info</a>', html_output)
 
         css_path = Path(__file__).resolve().parent.parent / "src" / "elk_ave" / "static" / "styles.css"
         css_text = css_path.read_text(encoding="utf-8")
         self.assertIn(".header-nav {", css_text)
+        self.assertIn(".mobile-menu-toggle {", css_text)
+        self.assertIn(".header-nav.is-open {", css_text)
         self.assertIn("white-space: nowrap;", css_text)
         self.assertIn("scrollbar-width: none;", css_text)
 
@@ -314,6 +334,10 @@ class RendererAndServerTests(unittest.TestCase):
         self.assertIn("overflow-x: hidden;", css_text)
         self.assertIn(".brand-location {\n    display: none !important;", css_text)
         self.assertIn(".site-header {", css_text)
+
+        js_path = Path(__file__).resolve().parent.parent / "src" / "elk_ave" / "static" / "app.js"
+        js_text = js_path.read_text(encoding="utf-8")
+        self.assertIn("function initMobileNav()", js_text)
 
     def test_github_pages_root_entry_and_asset_prefix_resolution(self) -> None:
         listing = build_property_listing()
