@@ -34,6 +34,15 @@ def _prefix_asset(rel_path: str, asset_prefix: str = "") -> str:
     return f"{clean_prefix}/{clean_path}"
 
 
+def _strip_provenance(obj: Any) -> Any:
+    """Recursively strip internal provenance objects from serialized public JSON."""
+    if isinstance(obj, dict):
+        return {k: _strip_provenance(v) for k, v in obj.items() if k != "provenance"}
+    if isinstance(obj, (list, tuple)):
+        return [_strip_provenance(item) for item in obj]
+    return obj
+
+
 def build_json_ld(listing: PropertyListing) -> dict[str, Any]:
     """Build Schema.org JSON-LD metadata for medical commercial real estate."""
     return {
@@ -50,6 +59,7 @@ def build_json_ld(listing: PropertyListing) -> dict[str, Any]:
             "addressCountry": "US",
         },
         "additionalProperty": [
+            {"@type": "PropertyValue", "name": "Total Above-Grade Gross Building Area", "value": "~20,256 GSF"},
             {"@type": "PropertyValue", "name": "Plumbed Clinical & Exam Rooms", "value": "35+"},
             {"@type": "PropertyValue", "name": "Dedicated Procedure Suites", "value": "7"},
             {"@type": "PropertyValue", "name": "Restrooms", "value": "12"},
@@ -59,7 +69,6 @@ def build_json_ld(listing: PropertyListing) -> dict[str, Any]:
             "@type": "Person",
             "name": listing.contact.name,
             "jobTitle": f"{listing.contact.role}, {listing.contact.entity}",
-            "telephone": listing.contact.phone_display,
             "email": listing.contact.email,
         },
     }
@@ -68,7 +77,7 @@ def build_json_ld(listing: PropertyListing) -> dict[str, Any]:
 def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     """Render the complete semantic HTML5 document for 207 Elk Ave S."""
     json_ld_str = json.dumps(build_json_ld(listing), indent=2)
-    embedded_data_str = json.dumps(listing.to_dict())
+    embedded_data_str = json.dumps(_strip_provenance(listing.to_dict()))
 
     def _asset(rel_path: str) -> str:
         return _prefix_asset(rel_path, asset_prefix)
@@ -107,8 +116,15 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 
     # Transformation Studio Tabs & Default Active Pair
     first_tr = listing.transformations[0]
+    studio_tab_labels = {
+        "exterior-facade": "Exterior: Architectural Exterior",
+        "waiting-lounge": "Waiting Lounge: Primary Patient Lounge",
+        "exam-procedure-suite": "Exam & Procedure Suites",
+        "nurses-station": "Clinical Core: Nurse Workstations",
+        "upper-breakroom-conference": "2nd Floor Conference & Lounge",
+    }
     studio_tabs_html = "\n".join(
-        f"""<button type="button" class="studio-tab{' active' if idx == 0 else ''}" data-transform-id="{_esc(t.id)}">{_esc(t.category)}: {_esc(t.title.split('&')[0].strip())}</button>"""
+        f"""<button type="button" class="studio-tab{' active' if idx == 0 else ''}" data-transform-id="{_esc(t.id)}">{_esc(studio_tab_labels.get(t.id, t.title))}</button>"""
         for idx, t in enumerate(listing.transformations)
     )
 
@@ -204,12 +220,12 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{_esc(listing.street_address)} | Turnkey Clinical &amp; Executive Space for Lease — Fayetteville, TN</title>
+  <title>{_esc(listing.street_address)} | Second-Generation Clinical &amp; Executive Space for Lease — Fayetteville, TN</title>
   <meta name="description" content="{_esc(listing.subheadline)}" />
-  <meta property="og:title" content="{_esc(listing.street_address)} — Turnkey Clinical &amp; Executive Space for Lease" />
+  <meta property="og:title" content="{_esc(listing.street_address)} — Second-Generation Clinical &amp; Executive Space for Lease" />
   <meta property="og:description" content="{_esc(listing.subheadline)}" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="{_esc(_asset('assets/images/exterior_wellness_no_cafe.png'))}" />
+  <meta property="og:image" content="https://jgperrone1.github.io/207-elk-ave-website/src/elk_ave/static/assets/images/exterior_wellness_no_cafe.png" />
   <link rel="stylesheet" href="{_esc(_asset('styles.css'))}" />
   <script type="application/ld+json">{json_ld_str}</script>
 </head>
@@ -241,6 +257,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
       </nav>
 
       <div class="header-actions">
+        <a href="#contact" class="btn btn--primary btn--sm header-contact-btn">Contact For Info</a>
         <button type="button" id="theme-toggle-btn" class="icon-btn" aria-label="Toggle color theme">🌙</button>
         <button
           type="button"
@@ -270,7 +287,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             <span>Coming Soon!</span>
           </div>
           <h1 class="hero-title hero-title--full">
-            <span class="hero-title-line">Turnkey Clinical Office Space for Lease</span>
+            <span class="hero-title-line">Second-Generation Clinical Office Space for Lease</span>
             <span class="hero-title-subline">Downtown Fayetteville, TN</span>
           </h1>
         </div>
@@ -385,7 +402,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
               <div class="archetype-meta-val" id="arch-rooms">{first_arch.target_rooms} Plumbed Clinical / Exam Rooms</div>
             </div>
             <div>
-              <div class="archetype-meta-label">Turnkey Infrastructure Match</div>
+              <div class="archetype-meta-label">Built-Out Infrastructure Match</div>
               <div class="infra-tags" id="arch-infra-tags">
                 {first_arch_infra}
               </div>
@@ -402,7 +419,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
           <span class="eyebrow">Renovation Concepts</span>
           <h2 class="section-title">Before &amp; After Architectural Concepts</h2>
           <p class="section-subtitle">
-            Drag the interactive split-screen slider across all six property zones to see how cosmetic
+            Drag the interactive split-screen slider across five key property zones to see how cosmetic
             millwork, lighting, and flooring upgrades transform the intact clinical footprint.
           </p>
         </div>
@@ -468,7 +485,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             <span class="eyebrow">Floorplans</span>
             <h2 class="section-title" style="margin-bottom: 0.25rem;">Dual-Level Floorplan Explorer</h2>
             <p class="section-subtitle">
-              Lease the Ground Floor (~12,874 SF), the Upper Level (~7,382 SF), or combine both elevator-connected levels (~20,256 GSF) into a custom medical campus.
+              Lease flexible clinical suites, the Ground Floor (~12,874 GSF), the Upper Level (~7,382 GSF), or combine both elevator-connected levels (~20,256 GSF) into a custom medical campus.
             </p>
           </div>
           <div class="floor-tabs" role="tablist" aria-label="Building Floor Selector">
@@ -509,10 +526,6 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                 <div class="floor-stat-num" id="floor-stat-rest">{first_floor.restrooms}</div>
                 <div class="floor-stat-lbl" id="floor-stat-rest-lbl">Ground-Floor Restrooms</div>
                 <div class="floor-stat-sub" style="font-size:0.75rem; color:var(--text-muted);">ADA-Accessible Restroom Facilities</div>
-              </div>
-              <div>
-                <div class="floor-stat-num" id="floor-stat-doors">{first_floor.exterior_egress_doors}</div>
-                <div class="floor-stat-lbl">Egress Doors</div>
               </div>
             </div>
           </div>
@@ -743,7 +756,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
           <span class="eyebrow">Direct Leasing</span>
           <h2 class="section-title">Contact Ownership Directly</h2>
           <p class="section-subtitle">
-            Work directly with ownership—without broker friction—to structure a single-floor, phased,
+            Work directly with ownership to structure a single-floor, phased,
             or full-building medical lease tailored to your clinical timeline and program goals (Base Rent + pro-rata building expense share / NNN pass-throughs).
           </p>
         </div>
@@ -774,13 +787,6 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             </p>
 
             <div class="owner-contact-links">
-              <a href="{_esc(listing.contact.phone_uri)}" class="owner-contact-link">
-                <span>📞</span>
-                <div>
-                  <div style="font-size:0.75rem; color:var(--text-on-dark-muted);">Direct Telephone</div>
-                  <div>{_esc(listing.contact.phone_display)}</div>
-                </div>
-              </a>
               <a href="mailto:{_esc(listing.contact.email)}" class="owner-contact-link">
                 <span>✉️</span>
                 <div>
@@ -788,13 +794,18 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                   <div>{_esc(listing.contact.email)}</div>
                 </div>
               </a>
-              <div class="owner-contact-link">
+              <a
+                href="https://www.google.com/maps/search/?api=1&amp;query=207+Elk+Ave+S,+Fayetteville,+TN+37334"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="owner-contact-link"
+              >
                 <span>📍</span>
                 <div>
-                  <div style="font-size:0.75rem; color:var(--text-on-dark-muted);">Property Location</div>
+                  <div style="font-size:0.75rem; color:var(--text-on-dark-muted);">Property Location (Google Maps ↗)</div>
                   <div>207 Elk Ave S, Fayetteville, TN 37334</div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div style="font-size:0.82rem; color:var(--text-on-dark-muted); border-top:1px solid var(--border-on-dark); padding-top:1rem;">
@@ -838,9 +849,9 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
               <div>
                 <label class="calc-label" for="inq-footprint">Target Footprint Configuration</label>
                 <select id="inq-footprint" class="calc-select">
-                  <option value="Full Ground Floor Clinical Wing (24+ Plumbed Exam Rooms, 7 Proc Suites, ~12,874 SF)">Full Ground Floor Wing (24+ Rooms, 7 Proc Suites, ~12,874 SF)</option>
+                  <option value="Full Ground Floor Clinical Wing (24+ Plumbed Exam Rooms, 7 Proc Suites, ~12,874 GSF)">Full Ground Floor Wing (24+ Rooms, 7 Proc Suites, ~12,874 GSF)</option>
                   <option value="Ground Floor Phased Clinical Pod (12–16 Plumbed Rooms)">Ground Floor Clinical Pod (12–16 Rooms)</option>
-                  <option value="Upper Level Executive &amp; Clinical Suite (11 Plumbed Rooms, 16 Offices, ~7,382 SF)">Upper Level Suite (11 Rooms, 16 Offices, ~7,382 SF)</option>
+                  <option value="Upper Level Executive &amp; Clinical Suite (11 Plumbed Rooms, 16 Offices, ~7,382 GSF)">Upper Level Suite (11 Rooms, 16 Offices, ~7,382 GSF)</option>
                   <option value="Full Two-Story Medical Campus (35+ Plumbed Rooms, ~20,256 GSF)">Full Campus (35+ Plumbed Rooms, ~20,256 GSF)</option>
                 </select>
               </div>
@@ -849,7 +860,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             <div class="form-row-2" style="margin-bottom:1rem;">
               <div>
                 <label class="calc-label" for="inq-timeline">Target Occupancy Horizon</label>
-                <input type="text" id="inq-timeline" class="calc-input" value="Q1 / Q2 Next Year" />
+                <input type="text" id="inq-timeline" class="calc-input" value="" placeholder="e.g., Q1 / Q2 2027 or Within 3–6 Months" />
               </div>
               <div>
                 <label class="calc-label" for="inq-notes">Specific Clinical or Lease Notes</label>
@@ -906,8 +917,13 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
   <footer class="site-footer">
     <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem;">
       <div>
-        <strong style="color:#ffffff;">207 Elk Ave S</strong> · Fayetteville, TN 37334
-        <p style="margin-top:0.25rem;">Owned &amp; Managed by 207 Elk LLC · Principal/Owner: Shaz Perrone · (973) 271-5324 · Shaz.Perrone@gmail.com</p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=207+Elk+Ave+S,+Fayetteville,+TN+37334"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color:#ffffff; font-weight:700; text-decoration:underline; text-underline-offset:3px;"
+        >207 Elk Ave S · Fayetteville, TN 37334 (Google Maps ↗)</a>
+        <p style="margin-top:0.25rem;">Owned &amp; Managed by 207 ELK LLC · Principal/Owner: Shaz Perrone · Shaz.Perrone@gmail.com</p>
       </div>
       <div style="text-align:right;">
         <a href="#disclosures" class="footer-disclosure-link" style="color:var(--text-on-dark-muted); text-decoration:underline;">Real Estate Licensing Disclosure &amp; Disclaimers</a>

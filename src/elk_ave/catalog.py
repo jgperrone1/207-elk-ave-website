@@ -31,9 +31,9 @@ def build_property_listing() -> PropertyListing:
         name="Shaz Perrone",
         title="Commercial Real Estate Development",
         role="Principal / Owner",
-        entity="207 Elk LLC (207 Elk Ave S)",
-        phone_display="(973) 271-5324",
-        phone_uri="tel:+19732715324",
+        entity="207 ELK LLC (207 Elk Ave S)",
+        phone_display="",
+        phone_uri="",
         email="Shaz.Perrone@gmail.com",
         portrait_image="assets/images/owner-shaz-perrone.jpg",
         credentials_summary=(
@@ -82,20 +82,12 @@ def build_property_listing() -> PropertyListing:
             provenance=Provenance(SOURCE_PDF, (11, 15, 24), "Page 15 Survey Tract 1 (0.39 AC) & Tract 2 (0.45 AC); Page 24 Point 14."),
         ),
         MetricHighlight(
-            id="egress-doors",
-            value="7",
-            unit_or_label="Ground-Floor Entry & Egress Doors",
-            detail="Separate ground-floor exterior doors providing dedicated patient, staff, and service access.",
-            category="Patient Flow",
-            provenance=Provenance(SOURCE_PDF, (16, 22), "Page 22 Point 9."),
-        ),
-        MetricHighlight(
             id="campus-scale",
             value="~20,256 GSF",
             unit_or_label="Total Above-Grade Clinical Footprint",
             detail="Elevator-connected two-story above-grade medical facility (plus basement mechanical/utility level) on a 0.84-acre total downtown campus.",
             category="Campus Scale",
-            provenance=Provenance(SOURCE_PDF, (3, 11, 15), "Two-story above-grade building (~20,256 GSF: 1st Floor ~12,874 SF + 2nd Floor ~7,382 SF per tax/appraiser records) and 0.84-acre campus."),
+            provenance=Provenance(SOURCE_PDF, (3, 11, 15), "Two-story above-grade building (~20,256 GSF: 1st Floor ~12,874 GSF + 2nd Floor ~7,382 GSF per tax/appraiser records) and 0.84-acre campus."),
         ),
     )
 
@@ -107,7 +99,7 @@ def build_property_listing() -> PropertyListing:
             summary=(
                 "Engineered for high-throughput outpatient care with dual waiting rooms, "
                 "dedicated check-in/check-out reception, 24+ plumbed exam rooms, 7 procedure suites, "
-                "4 nurse workstations, dedicated diagnostic imaging & laboratory infrastructure rooms, and 7 exterior doors."
+                "4 nurse workstations, dedicated diagnostic imaging & laboratory infrastructure rooms, and separate exterior access doors."
             ),
             floorplan_image="assets/images/floorplan-level-1.png",
             exam_and_clinical_rooms=24,
@@ -154,7 +146,7 @@ def build_property_listing() -> PropertyListing:
                     highlights=(
                         "24+ private exam rooms arranged in efficient double-loaded clinical pods",
                         "Existing cabinetry, sinks, wet-wall plumbing, and medical-grade electrical layouts",
-                        "Turnkey clinical infrastructure ready for immediate equipment connection",
+                        "Existing wet-wall plumbing and direct subfloor/basement utility access for streamlined clinical or dental equipment installation.",
                     ),
                     ideal_uses=(
                         "Primary Care & Family Medicine",
@@ -190,7 +182,7 @@ def build_property_listing() -> PropertyListing:
                     highlights=(
                         "4 strategically positioned Nurse Workstations and Work Alcoves with sightlines down exam corridors",
                         "6 private physician/provider consultation offices distributed across clinical pods",
-                        "Central passenger elevator, 3 interior stairwells, and 7 exterior egress doors",
+                        "Central passenger elevator, 3 interior stairwells, and separate exterior access doors",
                     ),
                     ideal_uses=(
                         "Care team charting & triage",
@@ -239,7 +231,7 @@ def build_property_listing() -> PropertyListing:
                     plumbing_equipped=True,
                     highlights=(
                         "11 plumbed exam/clinical rooms ideal for specialty practice or clinical treatment suites",
-                        "Turnkey Laboratory (#235) with built-in cabinetry and plumbing",
+                        "Built-Out Laboratory (#235) with built-in cabinetry and plumbing",
                         "Dedicated upper Waiting Room and Reception station adjacent to elevator shaft",
                     ),
                     ideal_uses=(
@@ -258,10 +250,10 @@ def build_property_listing() -> PropertyListing:
                     highlights=(
                         "Suite #222 offers a 24 x 24 ft (576 sq ft) clear-span collaboration, boardroom, or group therapy hall",
                         "Expansive 2nd-floor Breakroom / Staff Lounge with natural window light and kitchen cabinetry",
-                        "Supports CME seminars, multi-provider case conferences, and clinical team meetings",
+                        "Supports small-group provider meetings & clinical case conferences",
                     ),
                     ideal_uses=(
-                        "Continuing medical education (CME) & clinical case conferences",
+                        "Small-group provider meetings & clinical case conferences",
                         "Group behavioral therapy or cardiac/pulmonary rehab",
                         "Physician lounge & staff wellness suite",
                     ),
@@ -325,7 +317,7 @@ def build_property_listing() -> PropertyListing:
             before_image="assets/images/waiting-room-original.jpg",
             after_label="Modernized Lounge Concept",
             after_image="assets/images/Gemini_No_Cafe.jpeg",
-            alt_image="assets/images/practice-intake-business-office.jpg",
+            alt_image="assets/images/practice-pediatric-waiting.jpg",
             alt_label="Secondary / Pediatric Waiting Room",
             description=(
                 "Supported by decorative architectural columns and generous ceiling heights, the primary "
@@ -409,8 +401,8 @@ def build_property_listing() -> PropertyListing:
             id="multi-specialty-outpatient",
             specialty="Primary Care & Multi-Specialty Medical Group",
             icon_name="stethoscope",
-            headline="Turnkey High-Volume Outpatient Clinic with Proven Community Heritage",
-            recommended_configuration="Ground Floor (~12,874 SF) or Full ~20,256 GSF Two-Story Campus",
+            headline="Second-Generation High-Volume Outpatient Clinic with Proven Community Heritage",
+            recommended_configuration="Ground Floor (~12,874 GSF) or Full ~20,256 GSF Two-Story Campus",
             target_rooms=24,
             why_it_fits=(
                 "Known throughout Lincoln County as a trusted primary care destination (formerly HH Lincoln Health Primary Care), offering immediate patient recognition.",
@@ -447,7 +439,7 @@ def build_property_listing() -> PropertyListing:
             id="dental-oral-health",
             specialty="Dental & Hygiene Clinic",
             icon_name="smile",
-            headline="Turnkey Plumbed Operatories for Rapid Practice Launch",
+            headline="Built-Out Plumbed Operatories for Rapid Practice Launch",
             recommended_configuration="Ground Floor, Upper Floor, or Multi-Level Clinic",
             target_rooms=18,
             why_it_fits=(
@@ -456,7 +448,7 @@ def build_property_listing() -> PropertyListing:
                 "Built-in sterilization/lab suites on both floors (#235 on Level 2 plus Ground Floor Lab) streamline instrument processing.",
             ),
             infrastructure_match=(
-                "Turnkey clinical plumbing + 35+ plumbed rooms across both levels",
+                "Existing clinical plumbing + 35+ plumbed rooms across both levels",
                 "Sterilization & laboratory cabinetry already installed",
                 "High-capacity ~0.5-acre parking lot for patient and staff vehicles",
             ),
@@ -489,12 +481,12 @@ def build_property_listing() -> PropertyListing:
             recommended_configuration="Ground Floor Wing or Upper Level Clinical Suite",
             target_rooms=12,
             why_it_fits=(
-                "Accessible campus with 12 restrooms (including ADA-accessible restroom facilities), zero-step ground entries, wide clinical corridors, and a central commercial passenger elevator.",
+                "Accessible campus with 12 restrooms (including ADA-accessible restroom facilities), accessible ground-level entries, wide clinical corridors, and a central commercial passenger elevator.",
                 "576 sq ft clear-span room (#222) plus multi-purpose rooms support open therapeutic exercise, balance training, and ADL simulation.",
                 "Private plumbed exam rooms accommodate 1-on-1 manual therapy, speech/swallow therapy, and pediatric sensory fieldwork.",
             ),
             infrastructure_match=(
-                "Central stainless elevator + 7 ground-level access doors",
+                "Central stainless elevator + ground-level access doors",
                 "576 sq ft clear-span suite + private treatment rooms",
                 "Dedicated Pediatric Waiting Room with built-in aquarium window",
             ),
@@ -505,7 +497,7 @@ def build_property_listing() -> PropertyListing:
             specialty="Behavioral Health, Psychiatry & Counseling Center",
             icon_name="brain",
             headline="Private Consultation Offices, Group Therapy Halls & Discreet Patient Flow",
-            recommended_configuration="Upper Level (~7,382 SF) or Integrated Multi-Floor Suite",
+            recommended_configuration="Upper Level (~7,382 GSF) or Integrated Multi-Floor Suite",
             target_rooms=16,
             why_it_fits=(
                 "Second floor provides 16+ private windowed consultation offices plus 11 clinical rooms for medication management and psychiatric evaluations.",
@@ -515,7 +507,7 @@ def build_property_listing() -> PropertyListing:
             infrastructure_match=(
                 "16+ private perimeter offices + 11 upper clinical rooms",
                 "2 group therapy / conference halls + 2 staff kitchens",
-                "Dedicated exterior egress doors for private patient circulation",
+                "Dedicated exterior access doors for private patient circulation",
             ),
             provenance=Provenance(SOURCE_PDF, (16, 20, 21, 23, 27), "Generalized from 2nd floor plan and behavioral health vision point 23."),
         ),
@@ -524,7 +516,7 @@ def build_property_listing() -> PropertyListing:
             specialty="Healthcare Administration, Executive & Telehealth Center",
             icon_name="briefcase",
             headline="Dedicated Clinical Management, Telehealth Hub & Private Practice Suites",
-            recommended_configuration="Upper Level (~7,382 SF), Ground Level, or Combined Suites",
+            recommended_configuration="Upper Level (~7,382 GSF), Ground Level, or Combined Suites",
             target_rooms=16,
             why_it_fits=(
                 "Upper suite #222 provides a 576 sq ft clear-span multi-purpose room alongside built-in lab suite #235 and 11 sink-equipped clinical rooms.",
@@ -543,7 +535,7 @@ def build_property_listing() -> PropertyListing:
     pillars = (
         AdvantagePillar(
             id="turnkey-clinical",
-            title="Turnkey Clinical Infrastructure & Speed to Market",
+            title="Second-Generation Clinical Infrastructure & Speed to Market",
             subtitle="Bypass Protracted Redesign Cycles & Open on Schedule",
             summary=(
                 "Intact clinical partition walls, solid-core doors, medical-grade electrical layouts, "
@@ -554,20 +546,20 @@ def build_property_listing() -> PropertyListing:
                 AdvantagePoint(
                     number=1,
                     title="Multi-Level Selection Flexibility",
-                    description="Total footprint flexibility to lease the ground floor (~12,874 SF), upper level (~7,382 SF), or the full ~20,256 GSF two-story above-grade campus tailored to exact square footage and clinical program needs.",
+                    description="Total footprint flexibility to lease the ground floor (~12,874 GSF), upper level (~7,382 GSF), or the full ~20,256 GSF two-story above-grade campus tailored to exact square footage and clinical program needs.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (20,), "Point 1 generalized for all medical tenants."),
                 ),
                 AdvantagePoint(
                     number=2,
-                    title="Turnkey Ground-Floor Clinical Density",
+                    title="Existing Ground-Floor Clinical Density",
                     description="24+ private ground-floor exam rooms, 7 specialized procedure rooms, dedicated diagnostic imaging (X-Ray) and laboratory infrastructure rooms, and 4 central nurse stations—all with functional wet walls and sinks.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (16, 20), "Point 2 & 1st Floor Plan."),
                 ),
                 AdvantagePoint(
                     number=3,
-                    title="Turnkey Upper-Floor Clinical, Lab & Executive Layout",
+                    title="Built-Out Upper-Floor Clinical, Lab & Executive Layout",
                     description="11 sink-equipped second-floor clinical rooms, a built-in laboratory with cabinetry (#235), 16+ private perimeter offices, and 4 dedicated restrooms.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (16, 20), "Point 3 & 2nd Floor Plan."),
@@ -581,7 +573,7 @@ def build_property_listing() -> PropertyListing:
                 ),
                 AdvantagePoint(
                     number=5,
-                    title="Turnkey Patient Reception & Dual Waiting Suites",
+                    title="Built-Out Patient Reception & Dual Waiting Suites",
                     description="Fully built-out front-of-house featuring a main lobby, dual waiting rooms (Main Waiting & Pediatric/Specialty Sub-Waiting), dedicated check-in/out reception, two intake offices, and a high-density file room.",
                     pillar_id="turnkey-clinical",
                     provenance=Provenance(SOURCE_PDF, (16, 21), "Point 5 generalized."),
@@ -627,7 +619,7 @@ def build_property_listing() -> PropertyListing:
                 ),
                 AdvantagePoint(
                     number=10,
-                    title="Geographic Core for the 3-County Catchment Area",
+                    title="Geographic Core for a Multi-County Regional Catchment",
                     description="Centrally situated in Lincoln County along the US-64 / US-231 / US-431 crossroads to draw patients and clinical staff seamlessly across Lincoln, Moore, Giles, Franklin, Coffee, and Bedford counties.",
                     pillar_id="parking-location",
                     provenance=Provenance(SOURCE_PDF, (24,), "Point 15 generalized."),
@@ -681,7 +673,7 @@ def build_property_listing() -> PropertyListing:
                 AdvantagePoint(
                     number=16,
                     title="Flexible Expansion Horizon & Custom Lease Frameworks",
-                    description="Cooperative lease structures (Base Rent + pro-rata building expense share / NNN pass-throughs) with expansion options across two floors and adjacent parcels—supported by an ownership team rooted in finance, medicine, and engineering.",
+                    description="Cooperative lease structures (Base Rent + pro-rata building expense share / NNN pass-throughs) with expansion options across two floors—supported by an ownership team rooted in finance, medicine, and engineering.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (18, 28, 29), "Points 25-28 generalized."),
                 ),
@@ -756,7 +748,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-exam-renovated",
             title="Renovated Private Exam Suite",
-            caption="Plumbed clinical exam room with wood-tone flooring, custom cabinetry, and wet-wall sink.",
+            caption="Plumbed clinical exam room with wood-tone flooring, custom cabinetry, and wet-wall sink (conceptual rendering).",
             category="Clinical Interiors",
             image_path="assets/images/exam-room-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (8,), "Page 8 Exam Room Renovated."),
@@ -774,7 +766,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-nurses-renovated",
             title="Renovated Central Nurse Workstation",
-            caption="Modernized care-team triage and charting station with natural window daylight.",
+            caption="Modernized care-team triage and charting station with natural window daylight (conceptual rendering).",
             category="Clinical Interiors",
             image_path="assets/images/nurses-station-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (9,), "Page 9 Nurses Station Renovated."),
@@ -783,7 +775,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-elevator",
             title="Central Commercial Stainless Elevator Lobby",
-            caption="Full ADA passenger elevator connecting Ground Level and 2nd Floor clinical wings.",
+            caption="Commercial stainless passenger elevator connecting Ground Level and 2nd Floor clinical wings.",
             category="Clinical Interiors",
             image_path="assets/images/practice-central-elevator.jpg",
             provenance=Provenance(SOURCE_PDF, (14,), "Page 14 Elevator Lobby."),
@@ -792,7 +784,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-waiting-renovated",
             title="Hospitality-Inspired Patient Waiting Lounge",
-            caption="Warm biophilic waiting room visualization with wood flooring and comfortable seating.",
+            caption="Warm biophilic waiting room visualization with wood flooring and comfortable seating (conceptual rendering).",
             category="Lobby & Waiting",
             image_path="assets/images/Gemini_No_Cafe.jpeg",
             provenance=Provenance(SOURCE_PDF, (7,), "Page 7 Waiting Room Renovated."),
@@ -810,17 +802,17 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-peds-waiting",
             title="Dedicated Pediatric / Specialty Sub-Waiting Room",
-            caption="Secondary waiting lounge with built-in aquarium window for cohort separation.",
+            caption="Secondary waiting lounge with natural window light for cohort separation.",
             category="Lobby & Waiting",
-            image_path="assets/images/practice-intake-business-office.jpg",
+            image_path="assets/images/practice-pediatric-waiting.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Pediatric Waiting Room."),
             is_conceptual=False,
         ),
         GalleryAsset(
             id="gal-breakroom-renovated",
             title="2nd Floor Executive Conference & Staff Lounge",
-            caption="Clear-span 2nd floor lounge with full cabinetry, conference table, and presentation screen.",
-            category="Executive & Education",
+            caption="Clear-span 2nd floor lounge with full cabinetry, conference table, and presentation screen (conceptual rendering).",
+            category="Executive & Administrative",
             image_path="assets/images/breakroom-2nd-floor-renovated.jpg",
             provenance=Provenance(SOURCE_PDF, (10,), "Page 10 2nd Floor Breakroom Renovated."),
             is_conceptual=True,
@@ -829,7 +821,7 @@ def build_property_listing() -> PropertyListing:
             id="gal-exec-office-furnished",
             title="Luxuriously Furnished Executive Office Suite",
             caption="Private executive office suite at 207 Elk Ave S featuring rich hardwood cabinetry, executive workstation desk, natural daylight window, and quiet administrative ambiance.",
-            category="Executive & Education",
+            category="Executive & Administrative",
             image_path="assets/images/executive-office-furnished.jpg",
             provenance=Provenance(SOURCE_PDF, (10, 13), "Actual property interior photograph."),
             is_conceptual=False,
@@ -838,8 +830,8 @@ def build_property_listing() -> PropertyListing:
             id="gal-admin-office",
             title="Business & Intake Office Suite",
             caption="Multi-workstation administrative and patient billing office with pass-through window.",
-            category="Executive & Education",
-            image_path="assets/images/practice-pediatric-waiting.jpg",
+            category="Executive & Administrative",
+            image_path="assets/images/practice-intake-business-office.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Intake/Business Office."),
             is_conceptual=False,
         ),
@@ -874,7 +866,7 @@ def build_property_listing() -> PropertyListing:
 
     return PropertyListing(
         property_id="207-elk-ave-s",
-        headline="Turnkey Medical & Executive Office Campus in Historic Downtown Fayetteville",
+        headline="Second-Generation Medical & Executive Office Campus in Historic Downtown Fayetteville",
         subheadline=(
             "35+ plumbed clinical & exam suites, 7 procedure rooms, on-site diagnostic & lab infrastructure, "
             "and a dedicated ~0.5-acre parking lot—engineered for streamlined multi-specialty outpatient clinics "
@@ -891,7 +883,7 @@ def build_property_listing() -> PropertyListing:
         parking_lot_acres=0.45,
         total_campus_acres=0.84,
         executive_summary=(
-            "Securing turnkey clinical space in Southern Middle Tennessee and the North Huntsville growth "
+            "Securing second-generation clinical space in Southern Middle Tennessee and the North Huntsville growth "
             "corridor—without incurring $150 to $250+ per square foot in speculative shell build-out costs "
             "or 18-month architectural delays—is one of the greatest challenges facing expanding medical groups.",
             "207 Elk Ave S (formerly HH Lincoln Health Primary Care) delivers a capital-efficient, "
@@ -912,8 +904,8 @@ def build_property_listing() -> PropertyListing:
             "nearby_hospital": "HH Lincoln Medical Center (Minutes Away)",
             "catchment_counties": ["Lincoln", "Moore", "Giles", "Franklin", "Coffee", "Bedford", "Madison (AL)"],
             "lease_structures": [
-                "Ground Floor Clinical Wing (~12,874 SF)",
-                "Upper Level Specialty / Executive Wing (~7,382 SF)",
+                "Ground Floor Clinical Wing (~12,874 GSF)",
+                "Upper Level Specialty / Executive Wing (~7,382 GSF)",
                 "Phased Multi-Floor Custom Suite",
                 "Full Two-Story Campus (~20,256 GSF)",
             ],

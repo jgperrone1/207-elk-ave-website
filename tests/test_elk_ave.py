@@ -121,6 +121,17 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             "oral surgery",
             "Incentive & Grant Navigation Support",
             "Healthcare Heritage, Incentives & Long-Term Ownership Partnership",
+            "3-County Catchment Area",
+            "across all six property zones",
+            "Executive & Education",
+            "zero-step ground entries",
+            "and adjacent parcels",
+            "Full ADA passenger elevator",
+            "CME seminars",
+            "without broker friction",
+            "(973) 271-5324",
+            "Egress Doors",
+            '"provenance"',
         )
         for phrase in scrubbed_phrases:
             self.assertNotIn(
@@ -135,12 +146,24 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("recognition and familiarity by the community", html_output)
         self.assertIn("hero-coming-soon-bubble", html_output)
         self.assertIn("Coming Soon!", html_output)
-        self.assertIn("Turnkey Clinical Office Space for Lease</span>", html_output)
+        self.assertIn("Second-Generation Clinical Office Space for Lease</span>", html_output)
         self.assertNotIn("Turnkey Clinical Office Space for Lease.", html_output)
         self.assertIn("Downtown Fayetteville, TN", html_output)
         self.assertIn("Healthcare Heritage &amp; Ownership Partnership", html_output)
         self.assertIn("Assistance Seeking Local Incentives", html_output)
         self.assertIn("Minimal Trenching", html_output)
+        self.assertIn("Geographic Core for a Multi-County Regional Catchment", html_output)
+        self.assertIn("across five key property zones", html_output)
+        self.assertIn("Exam &amp; Procedure Suites", html_output)
+        self.assertIn("2nd Floor Conference &amp; Lounge", html_output)
+        self.assertIn("Executive &amp; Administrative", html_output)
+        self.assertIn(
+            "https://jgperrone1.github.io/207-elk-ave-website/src/elk_ave/static/assets/images/exterior_wellness_no_cafe.png",
+            html_output,
+        )
+        self.assertIn("Total Above-Grade Gross Building Area", html_output)
+        self.assertIn("https://www.google.com/maps/search/?api=1", html_output)
+        self.assertIn("(conceptual rendering)", html_output)
 
         # Gallery verification
         self.assertIn("Specialty Procedure &amp; Dermatology Suite", html_output)

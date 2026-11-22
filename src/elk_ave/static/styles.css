@@ -1275,7 +1275,7 @@ textarea {
 
 .floor-stats-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   margin-top: 1.25rem;
   padding-top: 1rem;

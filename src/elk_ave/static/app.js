@@ -89,12 +89,12 @@
       original: {
         src: "assets/images/exterior-original.jpg",
         label: "Current Clinical Exterior",
-        sub: "Turnkey two-story brick & clinical wing (formerly HH Lincoln Health Primary Care)",
+        sub: "Existing two-story brick & clinical wing (formerly HH Lincoln Health Primary Care)",
       },
       aerial: {
         src: "assets/images/aerial-front-facade.jpg",
         label: "Aerial Campus & ADA Parking View",
-        sub: "Direct street frontage, side ADA spaces, plus 0.5-acre lot across Elk Ave S",
+        sub: "Direct street frontage, side ADA spaces, plus ~0.5-acre lot across Elk Ave S",
       },
     };
 
@@ -314,9 +314,8 @@
       if (statRest) statRest.textContent = String(floor.restrooms);
       const statRestLbl = document.getElementById("floor-stat-rest-lbl");
       if (statRestLbl) {
-        statRestLbl.textContent = floor.level === 1 ? "Ground-Floor Restrooms" : "Upper-Floor Restrooms";
+        statRestLbl.textContent = floor.level === 1 ? "Ground-Floor Restrooms" : "Upper-Level Restrooms";
       }
-      if (statDoors) statDoors.textContent = String(floor.exterior_egress_doors);
 
       if (zonesContainer) {
         zonesContainer.innerHTML = floor.zones
@@ -509,15 +508,15 @@
     const specialty =
       (document.getElementById("inq-specialty") || {}).value || "Outpatient Clinical / Healthcare Practice";
     const footprint =
-      (document.getElementById("inq-footprint") || {}).value || "Full Ground Floor Clinical Wing (24+ Plumbed Rooms + 7 Proc Suites)";
+      (document.getElementById("inq-footprint") || {}).value || "Full Ground Floor Clinical Wing (24+ Plumbed Rooms + 7 Proc Suites, ~12,874 GSF)";
     const timeline =
-      (document.getElementById("inq-timeline") || {}).value || "Q1 / Q2 Next Year";
+      (document.getElementById("inq-timeline") || {}).value || "To Be Determined";
     const notes = (document.getElementById("inq-notes") || {}).value || "";
 
     const lines = [
       `Subject: 207 Elk Ave S Medical Leasing Inquiry — ${org}`,
       "",
-      "Dear Shaz Perrone (207 Elk LLC),",
+      "Dear Shaz Perrone (207 ELK LLC),",
       "",
       `We are evaluating medical/clinical space at 207 Elk Ave S in Fayetteville, TN for ${org} (Contact: ${name}).`,
       "",
