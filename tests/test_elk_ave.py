@@ -119,6 +119,8 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             "Mohs surgery",
             "surgical excisions",
             "oral surgery",
+            "Incentive & Grant Navigation Support",
+            "Healthcare Heritage, Incentives & Long-Term Ownership Partnership",
         )
         for phrase in scrubbed_phrases:
             self.assertNotIn(
@@ -131,7 +133,12 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("Clinical Infrastructure Readiness", html_output)
         self.assertIn("Engineered for Multi-Specialty Practices", html_output)
         self.assertIn("recognition and familiarity by the community", html_output)
-        self.assertIn("Coming Soon!  Turnkey Clinical Office Space for Lease in Downtown Fayetteville, TN", html_output)
+        self.assertIn("hero-coming-soon-badge", html_output)
+        self.assertIn("Coming Soon", html_output)
+        self.assertIn("Turnkey Clinical Office Space for Lease.", html_output)
+        self.assertIn("Downtown Fayetteville, TN", html_output)
+        self.assertIn("Healthcare Heritage &amp; Ownership Partnership", html_output)
+        self.assertIn("Assistance Seeking Local Incentives", html_output)
         self.assertIn("Minimal Trenching", html_output)
 
         # Gallery verification

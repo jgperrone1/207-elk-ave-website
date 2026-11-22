@@ -650,8 +650,8 @@ def build_property_listing() -> PropertyListing:
         ),
         AdvantagePillar(
             id="partnership-vision",
-            title="Healthcare Heritage, Incentives & Long-Term Ownership Partnership",
-            subtitle="Flexible Lease Structures Backed by a Healthcare-Aligned Ownership Team",
+            title="Healthcare Heritage & Ownership Partnership",
+            subtitle="Flexible Lease Structures Backed by Ownership",
             summary=(
                 "Formerly home to HH Lincoln Health Primary Care, 207 Elk Ave S benefits from established "
                 "recognition and familiarity by the community, backed by an ownership team committed to long-term tenant success."
@@ -673,8 +673,8 @@ def build_property_listing() -> PropertyListing:
                 ),
                 AdvantagePoint(
                     number=15,
-                    title="Incentive & Grant Navigation Support",
-                    description="Ownership provides hands-on financial and development expertise to help tenants navigate downtown revitalization programs, Main Street incentives, and rural healthcare infrastructure grants.",
+                    title="Assistance Seeking Local Incentives",
+                    description="Ownership provides assistance to tenants seeking applicable local municipal programs and downtown revitalization incentives.",
                     pillar_id="partnership-vision",
                     provenance=Provenance(SOURCE_PDF, (28,), "Point 24 generalized."),
                 ),

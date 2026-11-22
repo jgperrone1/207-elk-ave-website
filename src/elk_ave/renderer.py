@@ -242,8 +242,13 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
     <section id="top" class="hero">
       <div class="container">
         <div class="hero-header-full">
+          <div class="hero-coming-soon-badge">
+            <span class="coming-soon-pulse"></span>
+            <span>Coming Soon</span>
+          </div>
           <h1 class="hero-title hero-title--full">
-            Coming Soon!  Turnkey Clinical Office Space for Lease in Downtown Fayetteville, TN
+            <span class="hero-title-line">Turnkey Clinical Office Space for Lease.</span>
+            <span class="hero-title-subline">Downtown Fayetteville, TN</span>
           </h1>
         </div>
 
@@ -725,8 +730,7 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
             </div>
 
             <div style="font-size:0.82rem; color:var(--text-on-dark-muted); border-top:1px solid var(--border-on-dark); padding-top:1rem;">
-              Ownership provides hands-on guidance for Main Street district incentives, downtown revitalization
-              programs, and rural healthcare grant navigation.
+              Ownership provides assistance to tenants seeking applicable local municipal programs and downtown revitalization incentives.
             </div>
           </div>
 
