@@ -802,7 +802,7 @@ def build_property_listing() -> PropertyListing:
         GalleryAsset(
             id="gal-peds-waiting",
             title="Second Floor Waiting Room",
-            caption="Second floor waiting room with natural window light for cohort separation.",
+            caption="Bright, comfortable second-floor waiting lounge featuring natural window light and direct elevator lobby access for patients and visitors.",
             category="Lobby & Waiting",
             image_path="assets/images/practice-intake-business-office.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Pediatric Waiting Room."),
