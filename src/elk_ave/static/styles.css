@@ -1571,13 +1571,130 @@ textarea {
 }
 
 /* ==========================================================================
-   Filterable Media Gallery
+   Filterable Media Gallery (Actual vs Conceptual Separation)
    ========================================================================== */
+.gallery-controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.gallery-segment-control {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-secondary);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.gallery-segment-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-segment-btn:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.gallery-segment-btn.active {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.segment-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.segment-indicator--actual {
+  background: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+.segment-indicator--conceptual {
+  background: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25);
+}
+
 .gallery-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 0;
+}
+
+.gallery-group {
+  margin-bottom: 3.5rem;
+}
+
+.gallery-group:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-group-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.gallery-group-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-group-pill--actual {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.gallery-group-pill--conceptual {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.gallery-group-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  margin: 0.25rem 0 0.35rem;
+}
+
+.gallery-group-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 100%;
 }
 
 .gallery-grid {
@@ -1602,6 +1719,7 @@ textarea {
 }
 
 .gallery-thumb {
+  position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background: #0e1619;
@@ -1618,8 +1736,44 @@ textarea {
   transform: scale(1.05);
 }
 
+.gallery-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-card-badge--actual {
+  background: rgba(16, 185, 129, 0.92);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.gallery-card-badge--conceptual {
+  background: rgba(217, 119, 6, 0.94);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
 .gallery-meta {
   padding: 1rem 1.15rem;
+}
+
+.gallery-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 0.3rem;
 }
 
 .gallery-cat {
@@ -1630,15 +1784,36 @@ textarea {
   color: var(--accent-primary);
 }
 
+.gallery-type-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gallery-type-tag--actual {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+}
+
+.gallery-type-tag--conceptual {
+  background: rgba(245, 158, 11, 0.14);
+  color: #b45309;
+}
+
 .gallery-title {
   font-size: 0.96rem;
   font-weight: 700;
-  margin: 0.2rem 0 0.3rem;
+  margin: 0.2rem 0 0.35rem;
+  line-height: 1.3;
 }
 
 .gallery-caption {
   font-size: 0.83rem;
   color: var(--text-secondary);
+  line-height: 1.45;
 }
 
 /* ==========================================================================

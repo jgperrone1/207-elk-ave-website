@@ -143,8 +143,21 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("Minimal Trenching", html_output)
 
         # Gallery verification
-        self.assertIn("Specialty Procedure &amp; Dermatology Suite (Renovation Concept)", html_output)
+        self.assertIn("Specialty Procedure &amp; Dermatology Suite (Renovation Concept", html_output)
         self.assertIn("not actual existing condition", html_output)
+        self.assertIn("Luxuriously Furnished Executive Office Suite (Actual)", html_output)
+        self.assertIn("executive-office-furnished.jpg", html_output)
+        self.assertIn("gallery-card-badge--conceptual", html_output)
+        self.assertIn("gallery-card-badge--actual", html_output)
+        self.assertIn("Actual Property Photographs (Existing Condition)", html_output)
+        self.assertIn("Conceptual Renovation Concepts (Illustrative Only)", html_output)
+
+        # Verify gallery conceptual segregation
+        actual_assets = [g for g in self.listing.gallery if not g.is_conceptual]
+        conceptual_assets = [g for g in self.listing.gallery if g.is_conceptual]
+        self.assertEqual(len(actual_assets), 14)
+        self.assertEqual(len(conceptual_assets), 6)
+        self.assertEqual(len(self.listing.gallery), 20)
 
     def test_provenance_preserved_across_all_entities(self) -> None:
         for metric in self.listing.metrics:

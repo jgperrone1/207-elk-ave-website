@@ -142,6 +142,7 @@ class GalleryAsset:
     category: str
     image_path: str
     provenance: Provenance
+    is_conceptual: bool = False
 
 
 @dataclass(frozen=True)

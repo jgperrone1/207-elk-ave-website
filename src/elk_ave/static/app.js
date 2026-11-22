@@ -379,13 +379,17 @@
 
   function initGallery(data) {
     if (!data || !data.gallery) return;
+    const typeBtns = document.querySelectorAll("[data-gallery-type]");
     const filterBtns = document.querySelectorAll("[data-gallery-cat]");
     const items = document.querySelectorAll("[data-gallery-item]");
+    const groups = document.querySelectorAll(".gallery-group");
     const modal = document.getElementById("lightbox-modal");
     const closeBtn = document.getElementById("lightbox-close");
     const prevBtn = document.getElementById("lightbox-prev");
     const nextBtn = document.getElementById("lightbox-next");
 
+    state.activeGalleryType = "all";
+    state.activeGalleryCategory = "All";
     state.filteredGallery = data.gallery.slice();
 
     function showLightboxByIndex(idx) {
@@ -396,22 +400,53 @@
       openStandaloneLightbox(asset.image_path, asset.title, asset.caption);
     }
 
+    function applyGalleryFilters() {
+      const activeType = state.activeGalleryType || "all";
+      const activeCat = state.activeGalleryCategory || "All";
+
+      // Filter the array backing lightbox navigation
+      state.filteredGallery = data.gallery.filter((g) => {
+        const typeMatch =
+          activeType === "all" ||
+          (activeType === "conceptual" && g.is_conceptual) ||
+          (activeType === "actual" && !g.is_conceptual);
+        const catMatch = activeCat === "All" || g.category === activeCat;
+        return typeMatch && catMatch;
+      });
+
+      // Update card visibility
+      items.forEach((card) => {
+        const itemType = card.getAttribute("data-item-type");
+        const itemCat = card.getAttribute("data-item-category");
+        const typeMatch = activeType === "all" || itemType === activeType;
+        const catMatch = activeCat === "All" || itemCat === activeCat;
+        card.style.display = typeMatch && catMatch ? "block" : "none";
+      });
+
+      // Update group section visibility
+      groups.forEach((grp) => {
+        const grpType = grp.getAttribute("data-group-type");
+        const grpMatch = activeType === "all" || activeType === grpType;
+        const hasVisibleCards = Array.from(
+          grp.querySelectorAll("[data-gallery-item]")
+        ).some((c) => c.style.display !== "none");
+        grp.style.display = grpMatch && hasVisibleCards ? "block" : "none";
+      });
+    }
+
+    typeBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.activeGalleryType = btn.getAttribute("data-gallery-type");
+        typeBtns.forEach((b) => b.classList.toggle("active", b === btn));
+        applyGalleryFilters();
+      });
+    });
+
     filterBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const cat = btn.getAttribute("data-gallery-cat");
-        state.activeGalleryCategory = cat;
+        state.activeGalleryCategory = btn.getAttribute("data-gallery-cat");
         filterBtns.forEach((b) => b.classList.toggle("active", b === btn));
-
-        state.filteredGallery =
-          cat === "All"
-            ? data.gallery.slice()
-            : data.gallery.filter((g) => g.category === cat);
-
-        items.forEach((card) => {
-          const itemCat = card.getAttribute("data-item-category");
-          const match = cat === "All" || itemCat === cat;
-          card.style.display = match ? "block" : "none";
-        });
+        applyGalleryFilters();
       });
     });
 
