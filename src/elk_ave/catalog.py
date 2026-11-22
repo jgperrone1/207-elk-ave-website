@@ -801,8 +801,8 @@ def build_property_listing() -> PropertyListing:
         ),
         GalleryAsset(
             id="gal-peds-waiting",
-            title="Dedicated Pediatric / Specialty Sub-Waiting Room",
-            caption="Secondary waiting lounge with natural window light for cohort separation.",
+            title="Second Floor Waiting Room",
+            caption="Second floor waiting room with natural window light for cohort separation.",
             category="Lobby & Waiting",
             image_path="assets/images/practice-pediatric-waiting.jpg",
             provenance=Provenance(SOURCE_PDF, (13,), "Page 13 Pediatric Waiting Room."),
