@@ -314,13 +314,25 @@ def render_index_html(listing: PropertyListing, asset_prefix: str = "") -> str:
                 <div class="quick-fact-lbl">Dedicated private parking lot directly across Elk Ave S</div>
               </div>
               <div>
-                <div class="quick-fact-val">Minimal Trenching</div>
-                <div class="quick-fact-lbl">Intact wet walls, direct subfloor/basement utility access, X-ray &amp; lab rooms</div>
+                <div class="quick-fact-val">Intact Infrastructure</div>
+                <div class="quick-fact-lbl">Wet walls, direct subfloor/basement utility access, X-ray &amp; lab rooms</div>
               </div>
             </div>
           </div>
 
           <div class="hero-showcase">
+            <div class="hero-address-bar">
+              <a
+                href="https://www.google.com/maps/search/?api=1&amp;query=207+Elk+Ave+S,+Fayetteville,+TN+37334"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hero-address-link"
+              >
+                <span aria-hidden="true">📍</span>
+                <span>207 Elk Ave S, Fayetteville, TN 37334</span>
+                <span class="hero-maps-badge">Google Maps ↗</span>
+              </a>
+            </div>
             <div class="hero-image-frame">
               <img
                 id="hero-main-image"

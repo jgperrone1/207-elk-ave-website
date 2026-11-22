@@ -136,6 +136,7 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
             "second-generation",
             "High-Volume",
             "high-volume",
+            "Minimal Trenching",
         )
         for phrase in scrubbed_phrases:
             self.assertNotIn(
@@ -155,7 +156,8 @@ class CatalogAndGeneralizationTests(unittest.TestCase):
         self.assertIn("Downtown Fayetteville, TN", html_output)
         self.assertIn("Healthcare Heritage &amp; Ownership Partnership", html_output)
         self.assertIn("Assistance Seeking Local Incentives", html_output)
-        self.assertIn("Minimal Trenching", html_output)
+        self.assertIn("Intact Infrastructure", html_output)
+        self.assertIn("hero-address-bar", html_output)
         self.assertIn("Geographic Core for a Multi-County Regional Catchment", html_output)
         self.assertIn("across five key property zones", html_output)
         self.assertIn("Exam &amp; Procedure Suites", html_output)

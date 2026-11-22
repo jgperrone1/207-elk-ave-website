@@ -727,6 +727,43 @@ textarea {
   border: 1px solid var(--border-strong);
 }
 
+.hero-address-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: rgba(15, 23, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-address-link {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f3f7f6;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.hero-address-link:hover {
+  color: #5eead4;
+}
+
+.hero-maps-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #5eead4;
+  background: rgba(94, 234, 212, 0.14);
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+}
+
 .hero-image-frame {
   position: relative;
   aspect-ratio: 16 / 10;
